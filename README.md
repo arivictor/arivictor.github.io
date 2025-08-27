@@ -1,16 +1,27 @@
----
-layout: default
-title: "Home"
----
+# thundergolfer.github.io
 
-<h1>Welcome</h1>
-<p>This is my custom landing page.</p>
+Just my website. The theme is [thundergolfer/**junior-theme**](https://github.com/thundergolfer/junior-theme)
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-    </li>
-  {% endfor %}
-</ul>
+----
+
+### What it looks like
+
+![homepage preview](homepage-preview.png)
+
+### What you can find there
+
+* [Blog posts](http://thundergolfer.com/)
+* [My 'library' and 'antilibrary'](http://thundergolfer.com/library)
+* [A crude summary of my open-source work](http://thundergolfer.com/projects/)
+* [A basic about me page](http://thundergolfer.com/about/)
+
+### Other places you can find me
+
+* Twitter @ [jonobelotti_IO](https://twitter.com/jonobelotti_io)
+* LinkedIn @ [Jonathon Belotti](https://www.linkedin.com/in/jonathonbelotti/)
+
+----
+
+### Development
+
+Development documentation is in [DEVELOPMENT.md](DEVELOPMENT.md)
