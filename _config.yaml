@@ -1,1 +1,32 @@
-theme: Cayman
+# Site settings
+title: "My Blog"
+description: "A Markdown-powered blog on GitHub Pages"
+url: "https://arivictor.github.io"
+baseurl: ""   # leave empty for user/organisation site, set to "/repo" for project pages
+
+# Build settings
+theme: minima
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
+
+# Plugins supported by GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude unnecessary files from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Author info
+author:
+  name: "Your Name"
+  email: "your.email@example.com"
+
+# Optional social links (for minima theme)
+minima:
+  social_links:
+    github: arivictor
