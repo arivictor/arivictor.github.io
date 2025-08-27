@@ -1,7 +1,7 @@
 # Site settings
 title: Ari Victor [arivictor]
 author: Ari Victor
-description: "No hugs, some learning"
+description: "Keep it simple"
 baseurl: ""
 url: "https://arivictor.github.io"
 date_format: "%b %-d, %Y"
