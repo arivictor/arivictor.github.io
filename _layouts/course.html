@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<div class="post">
+  <header class="post-header">
+    <h1 class="h2">{{ page.title }}</h1>
+    {% if page.part %}
+      <p class="post-meta">{{ page.part }}</p>
+    {% endif %}
+    {% if page.duration %}
+      <p class="post-meta">Duration: {{ page.duration }}</p>
+    {% endif %}
+  </header>
+  <article class="post-content">
+    {{ content }}
+  </article>
+  
+  {% if page.next_course %}
+  <div class="course-navigation">
+    <a href="{{ page.next_course }}" class="btn btn-outline">Next: {{ page.next_title }} &rarr;</a>
+  </div>
+  {% endif %}
+  
+  {% if page.prev_course %}
+  <div class="course-navigation">
+    <a href="{{ page.prev_course }}" class="btn btn-outline">&larr; Previous: {{ page.prev_title }}</a>
+  </div>
+  {% endif %}
+</div>
+
+<style>
+.course-navigation {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.course-navigation .btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.course-navigation .btn:hover {
+  background-color: #f5f5f5;
+}
+</style>
