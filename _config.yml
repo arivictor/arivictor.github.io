@@ -1,16 +1,16 @@
 # Site settings
-title: Jonathon Belotti [thundergolfer]
-author: Jonathon Belotti
+title: Ari Victor [arivictor]
+author: Ari Victor
 description: "No hugs, some learning"
 baseurl: ""
-url: "https://thundergolfer.com"
+url: "https://arivictor.github.io"
 date_format: "%b %-d, %Y"
 
 # Google services
 google_verification:
 # Use either direct GA implementation or set up GTM account
 # - using both will skew your data (leave blank to not use at all)
-google_analytics: UA-113168316-1
+google_analytics:
 google_tag_manager:
 # Bing services
 bing_verification:
@@ -26,10 +26,9 @@ extended_fonts: false
 enable_anchorjs: true
 
 # Social icons
-github_username: thundergolfer
-stackoverflow_id:
-twitter_username: jonobelotti_io
-linkedin_username: jonathonbelotti
+github_username: arivictor
+stackoverflow_id: 5091805
+linkedin_username: arilaverty
 
 text:
   pagination:
@@ -41,7 +40,7 @@ text:
     related_posts: "More to read"
   index:
     coming_soon: "Coming soon..."
-  og_locale: "en_US"
+  og_locale: "en_AU"
 
 # Build settings
 markdown: kramdown
