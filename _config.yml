@@ -5,6 +5,7 @@ description: "Keep it simple"
 baseurl: ""
 url: "https://arivictor.github.io"
 date_format: "%b %-d, %Y"
+theme: minima
 
 # Google services
 google_verification:
@@ -17,8 +18,8 @@ bing_verification:
 
 # Optional features
 show_related_posts: True
-show_post_footers: True
-show_subscribe_cta: True
+show_post_footers: false
+show_subscribe_cta: false
 show_social_icons: false
 ajaxify_contact_form: false
 enable_mathjax: false
