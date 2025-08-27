@@ -63,3 +63,5 @@ collections:
     output: true
   portfolio:
     output: true
+  courses:
+    output: true
