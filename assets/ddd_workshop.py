@@ -327,7 +327,7 @@ def demo() -> None:
     app = Application(accounts, follows)
 
     # Register two users
-    [ev1] = app.handle(RegisterAccount(Email("a@example.com"), Username("alice_uk")))
+    [ev1] = app.handle(RegisterAccount(Email("aexample.com"), Username("alice_uk")))
     [ev2] = app.handle(RegisterAccount(Email("b@example.com"), Username("bob_uk")))
     a = ev1.account_id
     b = ev2.account_id

@@ -19,20 +19,7 @@ A complete, hands-on 5-part workshop that teaches you to discover domains with e
 ---
 
 ## Course Sections
-<!-- 
-<div class="course-list">
-{% assign sorted_courses = site.courses | sort: 'order' %}
-{% for course in sorted_courses %}
-  <div class="course-item">
-    <h3><a href="{{ course.url }}">{{ course.title }}</a></h3>
-    <p class="course-meta">{{ course.part }} • {{ course.duration }}</p>
-    <p>{{ course.content | strip_html | truncatewords: 30 }}</p>
-    <a href="{{ course.url }}" class="course-link">Start this section →</a>
-  </div>
-{% endfor %}
-</div> -->
-
----
+...
 
 ## What You'll Build
 
