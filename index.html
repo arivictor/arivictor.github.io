@@ -1,12 +1,12 @@
 ---
 layout: default
-tags: blog
+tags: home
 ---
 
+# 👋 Hi there, <br/> I'm Ari.
 
-{% assign posts_count = site.posts | size %}
 
-<h1>Blog</h1>
+<br>
 
 <div class="home">
   {% if posts_count > 0 %}
@@ -29,8 +29,6 @@ tags: blog
       </div>
     {% endfor %}
   </div>
-  {% include pagination.html %} {% if site.show_subscribe_cta %} {% include
-  subscribe.html %} {% endif %} {% else %}
   <h1 class="center">{{ site.text.index.coming_soon }}</h1>
   {% endif %}
 </div>
