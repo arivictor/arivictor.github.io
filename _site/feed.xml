@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ari Victor [arivictor]</title>
+    <description>Keep it simple</description>
+    <link>https://arivictor.github.io/</link>
+    <atom:link href="https://arivictor.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
+      
+      <item>
+        <title>Hello World</title>
+        <description>&lt;h1 id=&quot;header&quot;&gt;Header&lt;/h1&gt;
+
+&lt;p&gt;content&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hi&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
+        
+          <link>https://arivictor.github.io/hello/world/2025/08/26/hello-world/</link>
+          <guid isPermaLink="true">https://arivictor.github.io/hello/world/2025/08/26/hello-world/</guid>
+        
+      </item>
+      
+    
+  </channel>
+</rss>
