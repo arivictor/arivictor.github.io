@@ -1,4 +1,4 @@
-# Jekyll
+
 _site/
 .sass-cache/
 .jekyll-cache/
@@ -18,3 +18,26 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Ruby dependencies
+vendor/
+.bundle/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
