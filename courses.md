@@ -19,7 +19,7 @@ A complete, hands-on 5-part workshop that teaches you to discover domains with e
 ---
 
 ## Course Sections
-
+<!-- 
 <div class="course-list">
 {% assign sorted_courses = site.courses | sort: 'order' %}
 {% for course in sorted_courses %}
@@ -30,7 +30,7 @@ A complete, hands-on 5-part workshop that teaches you to discover domains with e
     <a href="{{ course.url }}" class="course-link">Start this section →</a>
   </div>
 {% endfor %}
-</div>
+</div> -->
 
 ---
 
