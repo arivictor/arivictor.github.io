@@ -9,7 +9,7 @@
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  color: #111333;
+  color: $black;
   padding: 1em 1.5em;
 }
 
@@ -21,12 +21,12 @@
 
 .button-disabled {
   opacity: 0.55;
-  background-color: #999;
+  background-color: $light-gray;
 }
 
 .button-disabled:hover,
 .button-disabled:active,
 .button-disabled:focus {
   cursor: not-allowed;
-  background-color: #999;
+  background-color: $light-gray;
 }

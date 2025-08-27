@@ -21,7 +21,7 @@ $h1-responsive: 4vw !default;
 $h00-responsive-max: 7.68rem !default;
 $h0-responsive-max: 5.76rem !default;
 $h1-responsive-max: 3.84rem !default;
-$abbr-border-bottom: 1px black dotted;
+$abbr-border-bottom: 1px $black dotted;
 
 // Page width
 $measure-width: 45rem !default;
@@ -31,35 +31,37 @@ $viewport-small: 32em;
 $viewport-medium: 48em;
 $viewport-large: 64em;
 
-// Colors
-$black: rgb(53, 53, 52) !default;
-$blue: #0076df !default;
-$red: #f95020 !default;
-$green: #00cf26 !default;
-$yellow: #efcc00 !default;
-$orange: #ffcc22 !default;
-$purple: #f92080 !default;
-$dark-blue: #00369f !default;
-$green: #00ab37 !default;
-$dark-green: #009f06 !default;
-$light-pink: #ffdddd !default;
-$light-green: #ddffdd !default;
-$dark-gray: #111 !default;
-$mid-gray: #777 !default;
-$light-gray: #ccc !default;
-$lighter-gray: #eee !default;
-$darken-1: rgba(#000,.0625) !default;
-$darken-2: rgba(#000,.125) !default;
-$darken-3: rgba(#000,.25) !default;
-$darken-4: rgba(#000,.5) !default;
+// Colors - Minimal Black & White Palette
+$black: #000 !default;
+$white: #fff !default;
+$dark-gray: #333 !default;
+$mid-gray: #666 !default;
+$light-gray: #999 !default;
+$lighter-gray: #f5f5f5 !default;
+
+// Legacy color variables for compatibility (all mapped to grayscale)
+$blue: $black !default;
+$red: $black !default;
+$green: $black !default;
+$yellow: $black !default;
+$orange: $black !default;
+$purple: $black !default;
+$dark-blue: $black !default;
+$dark-green: $black !default;
+$light-pink: $lighter-gray !default;
+$light-green: $lighter-gray !default;
+$darken-1: rgba($black,.0625) !default;
+$darken-2: rgba($black,.125) !default;
+$darken-3: rgba($black,.25) !default;
+$darken-4: rgba($black,.5) !default;
 
 // Header Colors
-$header-bg: white !default;
+$header-bg: $white !default;
 $header-fg: $black !default;
 
 // Links
-$link-color: $blue;
-$link-hover-color: $dark-blue;
+$link-color: $black;
+$link-hover-color: $mid-gray;
 
 // Breakpoints
 $breakpoint-md: '(min-width: 52em)';
@@ -98,28 +100,28 @@ $form-field-padding-x: .5rem;
 
 // Code
 $pre-border-radius: 0;
-$pre-background-color: #fafafa;
+$pre-background-color: $lighter-gray;
 $hljs-comment: $mid-gray;
-$hljs-keyword: $dark-blue;
+$hljs-keyword: $black;
 $hljs-name: $dark-gray;
-$hljs-number: $dark-green;
-$hljs-string: $red;
-$hljs-title: $red;
-$hljs-type: $dark-blue;
-$hljs-tag: $dark-blue;
-$hljs-attribute: $dark-green;
-$hljs-regexp: $dark-green;
-$hljs-symbol: $purple;
-$hljs-built-in: $dark-blue;
+$hljs-number: $black;
+$hljs-string: $dark-gray;
+$hljs-title: $black;
+$hljs-type: $black;
+$hljs-tag: $black;
+$hljs-attribute: $black;
+$hljs-regexp: $black;
+$hljs-symbol: $black;
+$hljs-built-in: $black;
 $hljs-preprocessor: $mid-gray;
-$hljs-deletion: $light-pink;
-$hljs-addition: $light-green;
-$hljs-change: $dark-blue;
+$hljs-deletion: $lighter-gray;
+$hljs-addition: $lighter-gray;
+$hljs-change: $black;
 $hljs-chunk: $light-gray;
 
 // Footer
 $footer-padding: $space-3;
-$footer-color: #000;
-$footer-bg-color: #fff;
+$footer-color: $black;
+$footer-bg-color: $white;
 $footer-font-weight: 300;
 $footer-font-size: .85rem;

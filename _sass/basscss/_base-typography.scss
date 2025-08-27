@@ -57,7 +57,7 @@ hr {
 }
 
 blockquote {
-  border-left: 5px solid #7a7a7a;
+  border-left: 5px solid $mid-gray;
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -67,9 +67,9 @@ blockquote {
 }
 
 blockquote footer {
-  background-color: #fff;
+  background-color: $white;
   border-color: transparent;
-  color: #7a7a7a;
+  color: $mid-gray;
   font-size: 1.2rem;
   font-style: normal;
   text-align: left;
@@ -80,7 +80,7 @@ blockquote footer {
 
 blockquote p {
   font-size: 1.2rem;
-  color: #333;
+  color: $dark-gray;
   margin-bottom: 0;
 }
 
