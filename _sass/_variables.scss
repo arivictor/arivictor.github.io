@@ -32,7 +32,7 @@ $viewport-medium: 48em;
 $viewport-large: 64em;
 
 // Colors - Minimal Black & White Palette
-#000: #000 !default;
+$black: #000 !default;
 $white: #fff !default;
 $dark-gray: #333 !default;
 $mid-gray: #666 !default;
