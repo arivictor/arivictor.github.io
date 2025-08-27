@@ -21,7 +21,7 @@ $h1-responsive: 4vw !default;
 $h00-responsive-max: 7.68rem !default;
 $h0-responsive-max: 5.76rem !default;
 $h1-responsive-max: 3.84rem !default;
-$abbr-border-bottom: 1px $black dotted;
+$abbr-border-bottom: 1px #000 dotted;
 
 // Page width
 $measure-width: 45rem !default;
@@ -32,7 +32,7 @@ $viewport-medium: 48em;
 $viewport-large: 64em;
 
 // Colors - Minimal Black & White Palette
-$black: #000 !default;
+#000: #000 !default;
 $white: #fff !default;
 $dark-gray: #333 !default;
 $mid-gray: #666 !default;
@@ -40,27 +40,27 @@ $light-gray: #999 !default;
 $lighter-gray: #f5f5f5 !default;
 
 // Legacy color variables for compatibility (all mapped to grayscale)
-$blue: $black !default;
-$red: $black !default;
-$green: $black !default;
-$yellow: $black !default;
-$orange: $black !default;
-$purple: $black !default;
-$dark-blue: $black !default;
-$dark-green: $black !default;
+$blue: #000 !default;
+$red: #000 !default;
+$green: #000 !default;
+$yellow: #000 !default;
+$orange: #000 !default;
+$purple: #000 !default;
+$dark-blue: #000 !default;
+$dark-green: #000 !default;
 $light-pink: $lighter-gray !default;
 $light-green: $lighter-gray !default;
-$darken-1: rgba($black,.0625) !default;
-$darken-2: rgba($black,.125) !default;
-$darken-3: rgba($black,.25) !default;
-$darken-4: rgba($black,.5) !default;
+$darken-1: rgba(#000,.0625) !default;
+$darken-2: rgba(#000,.125) !default;
+$darken-3: rgba(#000,.25) !default;
+$darken-4: rgba(#000,.5) !default;
 
 // Header Colors
 $header-bg: $white !default;
-$header-fg: $black !default;
+$header-fg: #000 !default;
 
 // Links
-$link-color: $black;
+$link-color: #000;
 $link-hover-color: $mid-gray;
 
 // Breakpoints
@@ -102,26 +102,26 @@ $form-field-padding-x: .5rem;
 $pre-border-radius: 0;
 $pre-background-color: $lighter-gray;
 $hljs-comment: $mid-gray;
-$hljs-keyword: $black;
+$hljs-keyword: #000;
 $hljs-name: $dark-gray;
-$hljs-number: $black;
+$hljs-number: #000;
 $hljs-string: $dark-gray;
-$hljs-title: $black;
-$hljs-type: $black;
-$hljs-tag: $black;
-$hljs-attribute: $black;
-$hljs-regexp: $black;
-$hljs-symbol: $black;
-$hljs-built-in: $black;
+$hljs-title: #000;
+$hljs-type: #000;
+$hljs-tag: #000;
+$hljs-attribute: #000;
+$hljs-regexp: #000;
+$hljs-symbol: #000;
+$hljs-built-in: #000;
 $hljs-preprocessor: $mid-gray;
 $hljs-deletion: $lighter-gray;
 $hljs-addition: $lighter-gray;
-$hljs-change: $black;
+$hljs-change: #000;
 $hljs-chunk: $light-gray;
 
 // Footer
 $footer-padding: $space-3;
-$footer-color: $black;
+$footer-color: #000;
 $footer-bg-color: $white;
 $footer-font-weight: 300;
 $footer-font-size: .85rem;
