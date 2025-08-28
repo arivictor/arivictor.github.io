@@ -14,6 +14,11 @@ title: Home
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       <small>{{ post.date | date: "%-d %b %Y" }}</small>
+      {% if post.tags %} - 
+        {% for tag in post.tags %}
+          <a href="/tags/{{ tag | slugify }}/">#{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      {% endif %}
     </li>
   {% endfor %}
 </ul>

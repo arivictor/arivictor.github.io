@@ -1,0 +1,8 @@
+{% assign tgs = include.tags | default: page.tags %}
+{% if tgs and tgs.size > 0 %}
+<nav class="nav" aria-label="Tags">
+  {% for tag in tgs %}
+    <a class="pill" href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
+  {% endfor %}
+</nav>
+{% endif %}
