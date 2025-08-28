@@ -17,11 +17,15 @@
 <body class="bg-white text-black font-sans leading-normal">
 
   <!-- Navbar -->
-  {% include nav.html %}
+  <main class="container">
+    <div class="mt-10 mb-15">
+      {% include nav.html %}
+    </div>
 
   <!-- Main content -->
-  <main class="max-w-5xl mx-auto px-6 py-16">
-    {{ content }}
+   <div class="mt-20">
+     {{ content }}
+   </div>
   </main>
 
   <!-- Footer -->

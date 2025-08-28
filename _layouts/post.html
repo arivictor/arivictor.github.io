@@ -2,28 +2,26 @@
 layout: default
 ---
 
-<article class="border-8 border-black p-10 bg-white">
+<article class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-10">
   <!-- Title -->
-  <h1 class="text-5xl font-extrabold uppercase mb-6">
+  <h1 class="text-4xl font-bold mb-4 text-gray-800">
     {{ page.title }}
   </h1>
 
   <!-- Date -->
-  <p class="text-sm font-mono mb-10">
+  <p class="text-sm text-gray-500 mb-8">
     {{ page.date | date: "%B %d, %Y" }}
   </p>
 
   <!-- Markdown content -->
-  <div class="space-y-6 leading-relaxed text-lg">
+  <div class="prose prose-lg max-w-none text-gray-700">
     <style>
-      /* brutalist markdown styles */
+      /* soft pastel minimal markdown styles */
       article h1, article h2, article h3, article h4 {
-        font-weight: 800;
-        text-transform: uppercase;
-        border-bottom: 4px solid black;
-        padding-bottom: 0.25rem;
+        font-weight: 700;
         margin-top: 2rem;
         margin-bottom: 1rem;
+        color: #1f2937; /* gray-800 */
       }
       article p {
         margin-bottom: 1.25rem;
@@ -31,7 +29,26 @@ layout: default
       article ul, article ol {
         margin-left: 1.5rem;
         margin-bottom: 1.25rem;
-        list-style-type: square;
+      }
+      article blockquote {
+        border-left: 4px solid #a5b4fc; /* indigo-300 */
+        padding-left: 1rem;
+        color: #374151; /* gray-700 */
+        background: #f3f4f6; /* gray-100 */
+        border-radius: 0.5rem;
+      }
+      article code {
+        background: #f3f4f6; /* amber-100 */
+        padding: 0.15rem 0.35rem;
+        border-radius: 0.25rem;
+        font-size: 0.9em;
+      }
+      article pre {
+        background: #f3f4f6; /* gray-100 */
+        padding: 1rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        border: 1px solid #e5e7eb; /* gray-200 */
       }
     </style>
 
@@ -43,7 +60,8 @@ layout: default
   <div class="mt-10 flex flex-wrap gap-3">
     {% for tag in page.tags %}
     <a href="{{ '/tags/' | append: tag | relative_url }}"
-       class="px-3 py-1 border-4 border-black bg-yellow-200 text-black text-xs uppercase font-bold hover:bg-black hover:text-white transition-colors">
+       class="px-3 py-1 rounded-full text-xs font-semibold 
+              bg-pink-100 text-gray-700 hover:bg-pink-200 transition">
       {{ tag }}
     </a>
     {% endfor %}
