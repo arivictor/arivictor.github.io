@@ -3,7 +3,8 @@ layout: post
 title: "Five Days Of Solitude: Day 1 - Single Responsibility Principle (SRP)"
 description: 'How I spent five days locked away with Python, coffee, and the determination to get better at design. Day 1: Single Responsibility Principle (SRP)'
 date: 2025-08-28
-categories: python solid design day-1 srp
+categories: python five-days-of-solitude day 1
+permalink: /2025/08/28/five-days-of-solitude-day-1/
 ---
 
 For five days I locked myself away with nothing but Python, coffee, and the determination to get better at design. No slack, no meetings, no distractions, just one with the code.
