@@ -1,11 +1,7 @@
 ---
-layout: course
+layout: post
 title: "DDD Workshop Part 1: Event Storming and Contexts"
-part: "Part 1 of 5"
-duration: "90 minutes"
-next_course: "/courses/02-entities-value-objects/"
-next_title: "Entities and Value Objects"
-order: 1
+date: 2025-08-27
 ---
 
 # Event Storming and Bounded Contexts
@@ -119,7 +115,7 @@ BlockUser → UserBlocked | BlockingFailed
 
 ```
 ┌─────────────────┐    ┌──────────────────┐
-│  Account Context │    │ Social Context   │
+│ Account Context │    │ Social Context   │
 │                 │    │                  │
 │ • Registration  │    │ • Following      │
 │ • Authentication│◄──►│ • Blocking       │
@@ -422,7 +418,3 @@ Event Storming gives us a collaborative technique to discover the real complexit
 In our social media example, we discovered that user blocking isn't just about preventing future interactions - it also requires cleaning up existing relationships. This policy-driven approach will become the foundation for our implementation in the following parts.
 
 The events and contexts we've identified provide the vocabulary and boundaries for building a robust, maintainable system that accurately reflects the business needs.
-
----
-
-**Next:** [Part 2 - Entities and Value Objects](/courses/02-entities-value-objects/) - Learn to represent the ubiquitous language in code using events to derive attributes and build robust domain models.

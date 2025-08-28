@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ page.title }} | {{ site.title }}</title>
+<link rel="stylesheet" href="{{ "/assets.css" | relative_url }}">
+<body>
+<header><a href="{{ "/" | relative_url }}">{{ site.title }}</a></header>
+<main>{{ content }}</main>
+<footer><small>© {{ site.time | date: "%Y" }}</small></footer>
+</body>
+</html>

@@ -1,8 +1,29 @@
 # Site settings
-title: Ari Victor [arivictor]
+title: Ari Victor
 author: Ari Victor
 description: "Keep it simple"
 baseurl: ""
 url: "https://arivictor.github.io"
 date_format: "%b %-d, %Y"
 theme: minima
+
+
+collections:
+  courses:
+    output: true
+    permalink: /courses/:course/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: courses
+    values:
+      layout: course_part
+
+# nice post URLs (optional)
+permalink: /:categories/:year/:month/:day/:title/

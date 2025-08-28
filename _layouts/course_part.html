@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{% assign all = site.courses | where: "course", page.course | sort: "part" %}
+<article>
+  <p><a href="{{ "/courses/" | relative_url }}">All courses</a></p>
+  <h1>{{ page.course | capitalize }} · Part {{ page.part }}: {{ page.title }}</h1>
+  {{ content }}
+  <hr>
+  <nav>
+    {% for d in all %}
+      {% if d.url == page.url %}
+        {% assign idx = forloop.index0 %}
+      {% endif %}
+    {% endfor %}
+    {% assign prev = all[idx | minus: 1] %}
+    {% assign next = all[idx | plus: 1] %}
+    <p>
+      {% if prev %}<a href="{{ prev.url }}">← Part {{ prev.part }}: {{ prev.title }}</a>{% endif %}
+      {% if prev and next %} · {% endif %}
+      {% if next %}<a href="{{ next.url }}">Part {{ next.part }}: {{ next.title }} →</a>{% endif %}
+    </p>
+  </nav>
+</article>
