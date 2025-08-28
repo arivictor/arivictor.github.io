@@ -1,17 +1,13 @@
-<div class="flex space-x-6 text-lg font-semibold">
-    <a href="{{ '/' | relative_url }}"
-       class="px-4 py-2 rounded-lg bg-pink-100 text-gray-800
-              hover:bg-pink-200 hover:shadow-md transition">
-      Home
+<nav class="neo-nav">
+  <h1 class="font-serif text-brand">
+    <a href="{{ '/' | relative_url }}" class="no-underline transition-colors">
+      {{ site.title }}
     </a>
-    <a href="{{ '/about' | relative_url }}"
-       class="px-4 py-2 rounded-lg bg-green-100 text-gray-800
-              hover:bg-green-200 hover:shadow-md transition">
-      About
-    </a>
-    <a href="{{ '/posts' | relative_url }}"
-       class="px-4 py-2 rounded-lg bg-blue-100 text-gray-800
-              hover:bg-blue-200 hover:shadow-md transition">
-      Posts
-    </a>
+  </h1>
+  
+  <div class="nav-links">
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <a href="{{ '/about' | relative_url }}">About</a>
+    <a href="{{ '/posts' | relative_url }}">Posts</a>
   </div>
+</nav>
