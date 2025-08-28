@@ -25,5 +25,4 @@ defaults:
     values:
       layout: course_part
 
-# nice post URLs (optional)
 permalink: /:categories/:year/:month/:day/:title/
