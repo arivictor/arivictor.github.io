@@ -3,6 +3,11 @@ layout: default
 title: Home
 ---
 
+<section>
+<h1>👋🏻 Hey, I'm Ari</h1>
+<p>I write about code.</p>
+</section>
+
 <h2>Posts</h2>
 <ul class="list">
   {% for post in site.posts %}
