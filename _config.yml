@@ -20,3 +20,5 @@ defaults:
       type: courses
     values:
       layout: course_part
+
+gems: ['jekyll-related-posts']
