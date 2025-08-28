@@ -7,7 +7,11 @@ layout: default
   {{ content }}
 </article>
 
-<section>
-  <!-- plugin: jekyll-related-posts -->
-  <related-posts />
-</section>
+{% if page.related_posts %}
+  <h3>Related Posts</h3>
+  <ul>
+    {% for post in page.related_posts limit:5 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}

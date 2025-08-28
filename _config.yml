@@ -21,4 +21,4 @@ defaults:
     values:
       layout: course_part
 
-gems: ['jekyll-related-posts']
+lsi: true
