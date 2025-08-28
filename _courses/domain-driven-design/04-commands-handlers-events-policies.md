@@ -1,13 +1,7 @@
 ---
-layout: course
-title: "DDD Workshop Part 4: Commands, Handlers, Events, Policies"
-part: "Part 4 of 5"
-duration: "90 minutes"
-prev_course: "/courses/03-repositories-aggregates/"
-prev_title: "Repositories and Aggregates"
-next_course: "/courses/05-queries-read-models-tests/"
-next_title: "Queries, Read Models, Tests"
-order: 4
+course: DDD 101
+part: 4
+title: "DDD 101 - Part 4: Commands, Handlers, Events, Policies"
 ---
 
 # Commands, Handlers, Events, and Policies: Orchestrating Business Workflows

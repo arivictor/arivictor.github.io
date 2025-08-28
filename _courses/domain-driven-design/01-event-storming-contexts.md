@@ -1,6 +1,7 @@
 ---
-layout: post
-title: "DDD Workshop Part 1: Event Storming and Contexts"
+course: DDD 101
+part: 1
+title: "DDD 101 - Part 1: Event Storming and Contexts"
 date: 2025-08-27
 ---
 

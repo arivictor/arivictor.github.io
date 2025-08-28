@@ -1,13 +1,7 @@
 ---
-layout: course
-title: "DDD Workshop Part 3: Repositories and Aggregates"
-part: "Part 3 of 5"
-duration: "90 minutes"
-prev_course: "/courses/02-entities-value-objects/"
-prev_title: "Entities and Value Objects"
-next_course: "/courses/04-commands-handlers-events-policies/"
-next_title: "Commands, Handlers, Events, Policies"
-order: 3
+course: DDD 101
+part: 3
+title: "DDD 101 - Part 3: Repositories and Aggregates"
 ---
 
 # Repositories and Aggregates: Domain-Driven Persistence

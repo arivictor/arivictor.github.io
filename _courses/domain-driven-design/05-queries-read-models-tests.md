@@ -1,11 +1,7 @@
 ---
-layout: course
-title: "DDD Workshop Part 5: Queries, Read Models, Tests"
-part: "Part 5 of 5"
-duration: "90 minutes"
-prev_course: "/courses/04-commands-handlers-events-policies/"
-prev_title: "Commands, Handlers, Events, Policies"
-order: 5
+course: DDD 101
+part: 5
+title: "DDD 101 - Part 5: Queries, Read Models, Tests"
 ---
 
 # Queries, Read Models, and Tests: Completing the DDD Architecture
@@ -41,7 +37,7 @@ This separation allows us to optimize each side for its specific needs without c
 ┌─────────────────┐         ┌─────────────────┐
 │   Write Side    │         │   Read Side     │
 │                 │         │                 │
-│ Commands ──────►│         │ Queries ──────►│
+│ Commands ──────►│         │  Queries ──────►│
 │ Handlers        │  Events │ Read Models     │
 │ Aggregates      │────────►│ Projections     │
 │ Repositories    │         │ Query Handlers  │

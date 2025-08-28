@@ -1,13 +1,7 @@
 ---
-layout: course
-title: "DDD Workshop Part 2: Entities and Value Objects"
-part: "Part 2 of 5"
-duration: "90 minutes"
-prev_course: "/courses/01-event-storming-contexts/"
-prev_title: "Event Storming and Contexts"
-next_course: "/courses/03-repositories-aggregates/"
-next_title: "Repositories and Aggregates"
-order: 2
+course: DDD 101
+part: 2
+title: "DDD 101 - Part 2: Entities and Value Objects"
 ---
 
 # Entities and Value Objects: The Building Blocks of Domain Models
