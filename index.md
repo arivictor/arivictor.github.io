@@ -5,7 +5,7 @@ title: Home
 
 <section>
 <h1>👋🏻 Hey, I'm Ari</h1>
-<p>I write about code.</p>
+<p>I write about code. Mostly python. 🐍</p>
 </section>
 
 <h2>Posts</h2>
@@ -17,15 +17,3 @@ title: Home
     </li>
   {% endfor %}
 </ul>
-
-<h2>Courses</h2>
-{% assign grouped = site.courses | group_by: "course" %}
-{% for g in grouped %}
-  <h3>{{ g.name | capitalize }}</h3>
-  <ol>
-    {% assign parts = g.items | sort: "part" %}
-    {% for p in parts %}
-      <li><a href="{{ p.url | relative_url }}">Part {{ p.part }}: {{ p.title }}</a></li>
-    {% endfor %}
-  </ol>
-{% endfor %}

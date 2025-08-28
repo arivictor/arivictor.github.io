@@ -1,12 +1,10 @@
 ---
 layout: post
-title: "Better Python: Decorators - From Basics to Advanced Patterns"
-date: 2025-02-05
-summary: "Unlock the power of Python decorators to write cleaner, more modular code. Learn to create, chain, and optimize decorators for real-world applications."
+title:  "Better Python Decorators - Basic and Advanced Patterns"
+date: 2025-08-28 12:00:00 +1000
+description: "Use Python decorators to write cleaner, more modular code. Learn to create, chain, and optimize decorators for real-world use cases."
 categories: python programming decorators patterns better-python
 ---
-
-# The Magic of Code Enhancement
 
 Decorators are one of Python's most powerful and elegant features. They allow you to modify or enhance functions and classes without changing their core implementation. Think of them as wrappers that add functionality—like adding superpowers to your code.
 
@@ -682,19 +680,9 @@ Decorators are a powerful tool for writing clean, modular Python code. They allo
 - Implement cross-cutting concerns elegantly
 
 Key principles:
+
 - Use `@wraps` to preserve function metadata
 - Keep decorators simple and focused
 - Use `*args` and `**kwargs` for flexibility
 - Make decorators configurable when needed
 - Test decorators thoroughly
-
-In our next post, we'll explore error handling strategies that make your Python applications more robust and user-friendly.
-
-## Practice Exercises
-
-1. Create a decorator that limits function execution time
-2. Build a decorator that automatically converts function arguments to specific types
-3. Design a decorator for implementing the circuit breaker pattern
-4. Write a decorator that adds automatic documentation to functions
-
-*What's your favorite use case for decorators? Have you built any interesting decorators in your projects?*
