@@ -1,0 +1,29 @@
+<header class="border-b-8 border-black bg-yellow-300 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+      <!-- Site Title -->
+      <a href="{{ '/' | relative_url }}"
+         class="text-4xl font-extrabold uppercase underline decoration-4 hover:no-underline text-black">
+        {{ site.title }}
+      </a>
+  
+      <!-- Navigation -->
+      <nav class="flex space-x-6 text-lg font-bold uppercase">
+        <a href="{{ '/' | relative_url }}"
+           class="px-3 py-2 border-4 border-black bg-pink-200 hover:bg-pink-300 hover:rotate-1 transition-all">
+          Home
+        </a>
+        <a href="{{ '/about' | relative_url }}"
+           class="px-3 py-2 border-4 border-black bg-green-200 hover:bg-green-300 hover:-rotate-1 transition-all">
+          About
+        </a>
+        <a href="{{ '/posts' | relative_url }}"
+           class="px-3 py-2 border-4 border-black bg-blue-200 hover:bg-blue-300 hover:rotate-2 transition-all">
+          Posts
+        </a>
+      </nav>
+    </div>
+  
+    <!-- Decorative brutalist blocks -->
+    <div class="absolute top-2 left-2 w-6 h-6 bg-pink-400 border-4 border-black rotate-12"></div>
+    <div class="absolute bottom-2 right-6 w-8 h-8 bg-green-400 border-4 border-black -rotate-6"></div>
+  </header>

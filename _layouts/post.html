@@ -1,22 +1,52 @@
 ---
 layout: default
 ---
-<article>
-  <h1>{{ page.title }}</h1>
-  <p><small>{{ page.date | date: "%-d %b %Y" }}</small></p>
-  {{ content }}
-</article>
 
-{% if page.tags %}
-  <h3>Related Posts</h3>
-  <ul>
-    {% for post in site.posts %}
-      {% if post != page and post.tags | join: ',' contains page.tags[0] %}
-        <li>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          <small>{{ post.date | date: "%-d %b %Y" }}</small>
-        </li>
-      {% endif %}
+<article class="border-8 border-black p-10 bg-white">
+  <!-- Title -->
+  <h1 class="text-5xl font-extrabold uppercase mb-6">
+    {{ page.title }}
+  </h1>
+
+  <!-- Date -->
+  <p class="text-sm font-mono mb-10">
+    {{ page.date | date: "%B %d, %Y" }}
+  </p>
+
+  <!-- Markdown content -->
+  <div class="space-y-6 leading-relaxed text-lg">
+    <style>
+      /* brutalist markdown styles */
+      article h1, article h2, article h3, article h4 {
+        font-weight: 800;
+        text-transform: uppercase;
+        border-bottom: 4px solid black;
+        padding-bottom: 0.25rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+      article p {
+        margin-bottom: 1.25rem;
+      }
+      article ul, article ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1.25rem;
+        list-style-type: square;
+      }
+    </style>
+
+    {{ content }}
+  </div>
+
+  <!-- Tags -->
+  {% if page.tags %}
+  <div class="mt-10 flex flex-wrap gap-3">
+    {% for tag in page.tags %}
+    <a href="{{ '/tags/' | append: tag | relative_url }}"
+       class="px-3 py-1 border-4 border-black bg-yellow-200 text-black text-xs uppercase font-bold hover:bg-black hover:text-white transition-colors">
+      {{ tag }}
+    </a>
     {% endfor %}
-  </ul>
-{% endif %}
+  </div>
+  {% endif %}
+</article>

@@ -1,22 +1,15 @@
 # Site settings
 title: Ari Victor
-author: Ari Victor
-description: "Keep it simple"
-baseurl: ""
-url: "https://arivictor.github.io"
-date_format: "%b %-d, %Y"
-theme: minima
+tag_text: Ari
+description: Ari Victor's personal blog
+# baseurl: "/blog" # the subpath of your site, e.g. /blog
+# url: "https://example.com" # the base hostname & protocol for your site, e.g. http://example.com
 
-markdown: GFM
-# highlighter: rouge
+plugins:
+  - jekyll-seo-tag
 
-collections:
-  courses:
-    output: true
-    permalink: /courses/:path/
-defaults:
-  - scope:
-      path: ""
-      type: courses
-    values:
-      layout: course_part
+# Build settings
+markdown: kramdown
+exclude: ["README.md"]
+sass:
+  style: compressed

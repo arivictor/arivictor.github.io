@@ -1,65 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZ27JF7RTN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-MZ27JF7RTN');
-  </script>
-
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta property="og:locale" content="{{ site.text.og_locale }}">
-  <meta property="og:type" content="article">
-  <meta property="og:title"
-    content="{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}">
-  <meta property="og:description"
-    content="{% if page.summary %}{{ page.description | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:site_name" content="{{ site.title | xml_escape }}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.title }}</title>
 
-  <title>{{ page.title }} | {{ site.title }}</title>
+  <!-- Tailwind (via CDN for simplicity) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
-
-  <!-- STYLESHEETS -->
-  <!-- <link rel="stylesheet" href="{{ " /assets/base.css" | relative_url }}"> -->
-  <!-- <link rel="stylesheet" href="{{ " /assets/rouge.css" | relative_url }}"> -->
-  <link rel="stylesheet" href="{{ " /css/junior.css" | prepend: site.baseurl }}?{{ site.time | date: "%Y%m%d%H%M" }}"
-    type="text/css">
-
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨🏻‍💻</text></svg>">
-
-
+  {% include head.html %}
 </head>
 
+<body class="bg-white text-black font-sans leading-normal">
 
+  <!-- Navbar -->
+  {% include nav.html %}
 
-<body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNZP6RQ6" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <!-- Main content -->
+  <main class="max-w-5xl mx-auto px-6 py-16">
+    {{ content }}
+  </main>
 
-  <header>
-    <a href="{{ " /" | relative_url }}"><strong>{{ site.title }}</strong></a>
-  </header>
-
-  <main>{{ content }}</main>
-
-  <footer><small>Built by Ari © {{ site.time | date: "%Y" }}</small></footer>
+  <!-- Footer -->
+  
+  {% include footer.html %}
+  {% include scripts.html %}
 </body>
 
 </html>
