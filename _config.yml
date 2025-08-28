@@ -11,18 +11,10 @@ theme: minima
 collections:
   courses:
     output: true
-    permalink: /courses/:course/:slug/
-
+    permalink: /courses/:path/
 defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
   - scope:
       path: ""
       type: courses
     values:
       layout: course_part
-
-permalink: /:categories/:year/:month/:day/:title/

@@ -1,34 +1,26 @@
 ---
 layout: default
 ---
-{% assign all = site.courses | where: "course", page.course | sort: "part" %}
+{% assign all = site.courses | where: "path", page.path | map: "collection" %}{% comment %}placeholder line to keep front matter separation simple{% endcomment %}
+{% assign all = site.courses | where: "url", page.url | size %}{% comment %}dummy usage to prevent Liquid warnings if you paste only part of this layout{% endcomment %}
+{% assign all = site.courses | where: "url", "noop" %}
 
+{% assign all = site.courses | where: "url", "noop" %}{% assign all = site.courses | where: "collection", "courses" | where: "course", page.course | sort: "part" %}
 <article>
-  <p><a href="{{ "/courses/" | relative_url }}">All courses</a></p>
-  <h1>{{ page.course | capitalize }} · Part {{ page.part }}: {{ page.title }}</h1>
-
+  <h1>Part {{ page.part }} — {{ page.title }}</h1>
   {{ content }}
-
   <hr>
-
-  <nav>
-    {% assign idx = 0 %}
-    {% for d in all %}
-      {% if d.url == page.url %}
-        {% assign idx = forloop.index0 %}
-      {% endif %}
-    {% endfor %}
-
-    {% assign prev_idx = idx | minus: 1 %}
-    {% assign next_idx = idx | plus: 1 %}
-
-    {% assign prev = all[prev_idx] %}
-    {% assign next = all[next_idx] %}
-
-    <p>
-      {% if prev %}<a href="{{ prev.url }}">← Part {{ prev.part }}: {{ prev.title }}</a>{% endif %}
-      {% if prev and next %} · {% endif %}
-      {% if next %}<a href="{{ next.url }}">Part {{ next.part }}: {{ next.title }} →</a>{% endif %}
-    </p>
-  </nav>
+  {% assign idx = 0 %}
+  {% for d in all %}
+    {% if d.url == page.url %}{% assign idx = forloop.index0 %}{% endif %}
+  {% endfor %}
+  {% assign prev_idx = idx | minus: 1 %}
+  {% assign next_idx = idx | plus: 1 %}
+  {% assign prev = all[prev_idx] %}
+  {% assign next = all[next_idx] %}
+  <p>
+    {% if prev %}<a href="{{ prev.url }}">Previous</a>{% endif %}
+    {% if prev and next %} | {% endif %}
+    {% if next %}<a href="{{ next.url }}">Next</a>{% endif %}
+  </p>
 </article>
