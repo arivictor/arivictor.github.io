@@ -7,6 +7,8 @@ url: "https://arivictor.github.io"
 date_format: "%b %-d, %Y"
 theme: minima
 
+markdown: kramdown
+highlighter: rouge
 
 collections:
   courses:

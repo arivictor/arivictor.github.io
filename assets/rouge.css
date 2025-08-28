@@ -1,0 +1,68 @@
+/* Rouge syntax highlighting – light/dark aware */
+:root {
+    --c-bg: #ffffff;
+    --c-fg: #24292e;
+    --c-muted: #6a737d;
+    --c-key: #d73a49;
+    --c-str: #032f62;
+    --c-num: #005cc5;
+    --c-func: #6f42c1;
+    --c-type: #22863a;
+    --c-meta: #b31d28;
+    --c-add: #22863a;
+    --c-del: #d73a49;
+    --c-mark: #ffd33d;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --c-bg: #0d1117;
+      --c-fg: #c9d1d9;
+      --c-muted: #8b949e;
+      --c-key: #ff7b72;
+      --c-str: #a5d6ff;
+      --c-num: #79c0ff;
+      --c-func: #d2a8ff;
+      --c-type: #7ee787;
+      --c-meta: #f85149;
+      --c-add: #3fb950;
+      --c-del: #f85149;
+      --c-mark: #d29922;
+    }
+  }
+  
+  pre.highlight {
+    background: var(--c-bg);
+    color: var(--c-fg);
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 1rem;
+    overflow-x: auto;
+    line-height: 1.4;
+  }
+  @media (prefers-color-scheme: dark) {
+    pre.highlight {
+      border-color: #30363d;
+    }
+  }
+  
+  .highlight .c { color: var(--c-muted); font-style: italic } /* Comment */
+  .highlight .err { color: var(--c-del); background: none }   /* Error */
+  .highlight .k { color: var(--c-key); font-weight: 600 }     /* Keyword */
+  .highlight .o { color: var(--c-key) }                       /* Operator */
+  .highlight .ch,.highlight .cm,.highlight .c1,.highlight .cs { color: var(--c-muted); font-style: italic }
+  .highlight .gd { color: var(--c-del) } /* Deletion */
+  .highlight .gi { color: var(--c-add) } /* Addition */
+  .highlight .gh { color: var(--c-meta) } /* Heading */
+  .highlight .gp { color: var(--c-meta) }
+  .highlight .gu { color: var(--c-meta) }
+  .highlight .kt { color: var(--c-type) }
+  .highlight .s { color: var(--c-str) } /* String */
+  .highlight .na { color: var(--c-func) } /* Name attribute */
+  .highlight .nf { color: var(--c-func); font-weight: 600 } /* Function name */
+  .highlight .nc { color: var(--c-type); font-weight: 600 } /* Class */
+  .highlight .nn { color: var(--c-type) }
+  .highlight .nt { color: var(--c-key) } /* Tag */
+  .highlight .nv { color: var(--c-num) } /* Variable */
+  .highlight .m { color: var(--c-num) }  /* Number */
+  .highlight .gd .x { background-color: #ffeef0 }
+  .highlight .gi .x { background-color: #e6ffed }
