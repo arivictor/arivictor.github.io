@@ -5,7 +5,13 @@
 <title>{{ page.title }} | {{ site.title }}</title>
 <link rel="stylesheet" href="{{ "/assets.css" | relative_url }}">
 <body>
-<header><a href="{{ "/" | relative_url }}">{{ site.title }}</a></header>
+<header>
+  <a href="{{ "/" | relative_url }}"><strong>{{ site.title }}</strong></a>
+  <nav class="nav">
+    <a href="{{ "/" | relative_url }}">Posts</a>
+    <a href="{{ "/courses/" | relative_url }}">Courses</a>
+  </nav>
+</header>
 <main>{{ content }}</main>
 <footer><small>© {{ site.time | date: "%Y" }}</small></footer>
 </body>
