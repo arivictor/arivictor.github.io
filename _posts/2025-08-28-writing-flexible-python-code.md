@@ -3,7 +3,11 @@ layout: post
 title: "Writing Flexible Python Code"
 description: 'How I try to keep my Python code flexible by minimising the surface area of changes'
 date: 2025-08-28 12:00:00 +1000
-categories: python
+tags:
+    - python
+    - design
+    - solid
+    - srp
 ---
 
 One idea I try to keep in mind when writing Python is minimising surface area. To me, that means when I add or change a feature, I don’t want it to ripple out and force changes across unrelated parts of the code. The smaller the impact of a change, the more comfortable I feel making it.

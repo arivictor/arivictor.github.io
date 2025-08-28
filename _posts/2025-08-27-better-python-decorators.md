@@ -3,7 +3,11 @@ layout: post
 title:  "Better Python Decorators - Basic and Advanced Patterns"
 date: 2025-08-28 12:00:00 +1000
 description: "Use Python decorators to write cleaner, more modular code. Learn to create, chain, and optimize decorators for real-world use cases."
-categories: python
+tags:
+    - python
+    - decorators
+    - programming
+    - tutorial
 ---
 
 Decorators are one of Python's most powerful and elegant features. They allow you to modify or enhance functions and classes without changing their core implementation. Think of them as wrappers that add functionality—like adding superpowers to your code.

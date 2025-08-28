@@ -20,5 +20,3 @@ defaults:
       type: courses
     values:
       layout: course_part
-
-lsi: true

@@ -7,11 +7,16 @@ layout: default
   {{ content }}
 </article>
 
-{% if page.related_posts %}
+{% if page.tags %}
   <h3>Related Posts</h3>
   <ul>
-    {% for post in page.related_posts limit:5 %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% for post in site.posts %}
+      {% if post != page and post.tags | join: ',' contains page.tags[0] %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <small>{{ post.date | date: "%-d %b %Y" }}</small>
+        </li>
+      {% endif %}
     {% endfor %}
   </ul>
 {% endif %}
