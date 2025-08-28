@@ -5,3 +5,4 @@ description: "Keep it simple"
 baseurl: ""
 url: "https://arivictor.github.io"
 date_format: "%b %-d, %Y"
+theme: minima
