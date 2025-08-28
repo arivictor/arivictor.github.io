@@ -8,7 +8,7 @@ permalink: /courses/
 
 {% assign grouped = site.courses | group_by: "course" %}
 {% for g in grouped %}
-  <h3>{{ g.name | default: "Untitled course" | replace: "-", " " | capitalize }}</h3>
+  <h3>{{ g.name | capitalize }}</h3>
   <ol>
     {% assign parts = g.items | sort: "part" %}
     {% for p in parts %}
