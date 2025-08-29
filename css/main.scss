@@ -303,5 +303,128 @@ a {
   }
 }
 
+// Tag Pages Styles
+.neo-tag-card {
+  border: 1px solid #{$border-color};
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: white;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: #{$brand-color};
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tag-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    
+    a:hover {
+      color: #{$text-primary};
+    }
+  }
+  
+  .tag-card-count {
+    font-size: 0.875rem;
+    color: #{$text-light};
+    margin-bottom: 1rem;
+  }
+  
+  .tag-card-posts {
+    .tag-card-post {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      
+      a {
+        color: #{$text-secondary};
+        flex: 1;
+        margin-right: 1rem;
+        
+        &:hover {
+          color: #{$brand-color};
+        }
+      }
+      
+      .tag-card-date {
+        color: #{$text-light};
+        font-size: 0.75rem;
+        white-space: nowrap;
+      }
+    }
+    
+    .tag-card-more {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+// Grid utilities for tag cards
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.border {
+  border: 1px solid #{$border-color};
+}
+
+.hover\:border-brand-color:hover {
+  border-color: #{$brand-color};
+}
+
 // Import syntax highlighting
 @import 'syntax';

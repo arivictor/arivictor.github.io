@@ -1,0 +1,77 @@
+---
+layout: default
+---
+
+<div class="space-y-16">
+  <header class="text-center py-16">
+    <h1 class="font-serif text-brand mb-6 leading-tight" style="font-size: 3rem;">
+      Tagged: {{ page.tag }}
+    </h1>
+    <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+      All posts tagged with "{{ page.tag }}"
+    </p>
+  </header>
+
+  <section class="neo-post-list">
+    {% assign tag_posts = site.tags[page.tag] %}
+    {% if tag_posts.size > 0 %}
+      {% for post in tag_posts %}
+      <article class="post-item">
+        <h2 class="post-title">
+          <a href="{{ post.url | relative_url }}" class="font-serif text-brand transition-colors">
+            {{ post.title }}
+          </a>
+        </h2>
+        
+        <p class="post-date">
+          {{ post.date | date: "%B %d, %Y" }}
+        </p>
+
+        {% if post.description %}
+        <p class="post-description">
+          {{ post.description }}
+        </p>
+        {% endif %}
+
+        {% if post.tags %}
+        <div class="post-tags">
+          {% for tag in post.tags %}
+          <a href="{{ '/tags/' | append: tag | relative_url }}">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    {% else %}
+      <p class="text-center text-gray-600">No posts found with the tag "{{ page.tag }}".</p>
+    {% endif %}
+  </section>
+
+  <!-- Tag exploration section -->
+  <section class="text-center py-16 border-t border-gray-200">
+    <h2 class="font-serif text-brand mb-8" style="font-size: 2rem;">
+      Explore Other Tags
+    </h2>
+    
+    <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+      {% assign sorted_tags = site.tags | sort %}
+      {% for tag in sorted_tags %}
+        {% assign tag_name = tag[0] %}
+        {% assign tag_posts = tag[1] %}
+        {% if tag_name != page.tag %}
+        <a href="{{ '/tags/' | append: tag_name | relative_url }}" 
+           class="text-brand transition-colors font-medium px-3 py-1 rounded border border-gray-300 hover:border-brand-color">
+          {{ tag_name }} ({{ tag_posts.size }})
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    
+    <div class="mt-8">
+      <a href="{{ '/tags/' | relative_url }}" 
+         class="text-brand transition-colors font-medium">
+        → View All Tags
+      </a>
+    </div>
+  </section>
+</div>
