@@ -5,7 +5,7 @@ layout: default
 
 <div class="space-y-16">
   <header class="text-center py-16">
-    <!-- <h1 class="font-serif text-brand mb-6 leading-tight" style="font-size: 3rem;">
+    <!-- <h1 class="font-sans text-brand mb-6 leading-tight" style="font-size: 2.25rem;">
       Recent Posts
     </h1> -->
     <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -13,11 +13,11 @@ layout: default
     </p>
   </header>
 
-  <section class="neo-post-list">
+  <section class="minimal-post-list">
     {% for post in site.posts %}
     <article class="post-item">
       <h2 class="post-title">
-        <a href="{{ post.url | relative_url }}" class="font-serif text-brand transition-colors">
+        <a href="{{ post.url | relative_url }}" class="font-sans text-brand transition-colors">
           {{ post.title }}
         </a>
       </h2>

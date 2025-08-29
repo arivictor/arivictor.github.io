@@ -4,7 +4,7 @@ layout: default
 
 <div class="space-y-16">
   <header class="text-center py-16">
-    <h1 class="font-serif text-brand mb-6 leading-tight" style="font-size: 3rem;">
+    <h1 class="font-sans text-brand mb-6 leading-tight" style="font-size: 2.25rem;">
       Tagged: {{ page.tag }}
     </h1>
     <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -12,13 +12,13 @@ layout: default
     </p>
   </header>
 
-  <section class="neo-post-list">
+  <section class="minimal-post-list">
     {% assign tag_posts = site.tags[page.tag] %}
     {% if tag_posts.size > 0 %}
       {% for post in tag_posts %}
       <article class="post-item">
         <h2 class="post-title">
-          <a href="{{ post.url | relative_url }}" class="font-serif text-brand transition-colors">
+          <a href="{{ post.url | relative_url }}" class="font-sans text-brand transition-colors">
             {{ post.title }}
           </a>
         </h2>
@@ -49,7 +49,7 @@ layout: default
 
   <!-- Tag exploration section -->
   <section class="text-center py-16 border-t border-gray-200">
-    <h2 class="font-serif text-brand mb-8" style="font-size: 2rem;">
+    <h2 class="font-sans text-brand mb-8" style="font-size: 1.875rem;">
       Explore Other Tags
     </h2>
     
