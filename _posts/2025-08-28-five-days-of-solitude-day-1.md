@@ -8,22 +8,18 @@ tags:
     - solid
 ---
 
-Single Responsibility Principle.
-One reason to change. Nothing more.
+Every system begins simple. Over time, weight gathers. A class collects stray responsibilities. A function tries to answer too many questions at once.A module should do one thing. A class or function should have one reason to change.
 
-## Definition
+The **S in SOLID** cuts through the noise. Single Responsibility Principle: one reason to change. Nothing more.
 
-A module should do one thing.
-A class or function should have one reason to change.
-
-## Why it matters
+When code does one thing, it is easier to test, easier to reason about, and safer to change. When it does many things, every edit risks breaking something unseen.
 
 Smaller surface area.
 Easier tests.
 Cheaper changes.
 Clear ownership of behaviour.
 
-## Anti example
+### Anti example
 
 ```python
 import json
@@ -60,19 +56,21 @@ class ReportManager:
         )
 ```
 
-Problems:
+Here, one class changes if:
 
-1. Domain logic lives with formatting and file IO.
-2. Any change to output format or storage touches the same class.
-3. Hard to test in isolation.
+* Domain rules change
+* Report layout changes
+* File storage changes
 
-## SRP refactor
+Three reasons. Too many.
+
+### SRP refactor
 
 Split by reason to change.
 
-* Domain
-* Presentation
-* Persistence
+* Domain: the data and rules.
+* Presentation: how it looks.
+* Persistence: where it goes.
 
 ```python
 from dataclasses import dataclass
@@ -157,12 +155,13 @@ render_and_write(
 )
 ```
 
-Benefits
-1. Change formatting without touching domain or IO.
-2. Swap storage easily. Add S3Writer or StdoutWriter without touching Report or formatters.
-3. Test each piece alone.
+Now:
 
-Testing in isolation
+* Change domain rules → touch only Report.
+* Change layout → touch only formatter.
+* Change storage → touch only writer.
+
+### Testing in isolation
 
 ```python
 class StubWriter:
@@ -184,9 +183,9 @@ def test_total_only_domain():
 
 No filesystem in tests. No datetime stubbing outside the formatter if you choose to inject a clock later.
 
-## Finding SRP violations
+### Heuristics
 
-Heuristics
+You might be breaking SRP if:
 
 1. Method names refer to different concerns. Example format, save, validate inside one class.
 2. More than one stakeholder asks for changes in the same class. Example design asks for layout changes, ops asks for path changes.
@@ -198,7 +197,7 @@ When to stop splitting
 * If two concerns always change together, keep them together.
 * SRP is a guide to reduce blast radius, not a rule to inflate class counts.
 
-## Summary
+### Closing
 
 One class. One reason to change.
 Keep domain pure.
