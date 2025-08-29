@@ -1,3 +1,3 @@
 # arivictor.github.io
 
-[view](arivictor.github.io)
+[view](https://arivictor.github.io)
