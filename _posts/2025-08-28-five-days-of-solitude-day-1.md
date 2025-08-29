@@ -8,16 +8,16 @@ tags:
     - solid
 ---
 
-Every system begins simple. Over time, weight gathers. A class collects stray responsibilities. A function tries to answer too many questions at once.A module should do one thing. A class or function should have one reason to change.
-
-The **S in SOLID** cuts through the noise. Single Responsibility Principle: one reason to change. Nothing more.
+Every system begins simple. Over time, weight gathers. A class collects stray responsibilities. A function tries to answer too many questions at once. The **S in SOLID** cuts through the noise. Single Responsibility Principle: one reason to change. Nothing more. A module should do one thing. A class or function should have one reason to change.
 
 When code does one thing, it is easier to test, easier to reason about, and safer to change. When it does many things, every edit risks breaking something unseen.
 
-Smaller surface area.
-Easier tests.
-Cheaper changes.
-Clear ownership of behaviour.
+The S in SOLID is a guide to reduce blast radius. Not a rule to inflate class counts.
+
+* Smaller surface area.
+* Easier tests.
+* Cheaper changes.
+* Clear ownership of behaviour.
 
 ### Anti example
 
