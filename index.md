@@ -35,7 +35,7 @@ layout: default
       {% if post.tags %}
       <div class="post-tags">
         {% for tag in post.tags %}
-        <a href="{{ '/tags/' | append: tag | relative_url }}">{{ tag }}</a>
+        <a href="{{ '/tags/' | append: tag | append: '/' | relative_url }}">{{ tag }}</a>
         {% endfor %}
       </div>
       {% endif %}

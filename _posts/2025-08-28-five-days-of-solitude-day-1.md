@@ -1,81 +1,203 @@
 ---
 layout: post
-title: "Five Days Of Solitude: Day 1 - Single Responsibility Principle (SRP)"
-description: 'How I spent five days locked away with Python, coffee, and the determination to get better at design. Day 1: Single Responsibility Principle (SRP)'
+title: "The S in SOLID, with code"
+description: 'One reason to change. Nothing more.'
 date: 2025-08-28 12:00:00 +1000
 tags:
     - python
-    - design
     - solid
-    - srp
 ---
 
-For five days I locked myself away with nothing but Python, coffee, and the determination to get better at design. No slack, no meetings, no distractions, just one with the code.
+Every system begins simple. Over time, weight gathers. A class collects stray responsibilities. A function tries to answer too many questions at once.A module should do one thing. A class or function should have one reason to change.
 
-I planned to revisit and lock down the SOLID principles. These five rules of object-oriented design have been around for decades, but they’re still as useful today as when they were first put to words. They help keep code simple, flexible, and maintainable, even when projects grow messy.
+The **S in SOLID** cuts through the noise. Single Responsibility Principle: one reason to change. Nothing more.
 
-Each day in solitude I explored one of them. Each day, I wrote Python examples, thought about how the principle shows up in real projects, and how it keeps code from turning into a ball of *"wtf is this?"*.
+When code does one thing, it is easier to test, easier to reason about, and safer to change. When it does many things, every edit risks breaking something unseen.
 
-What follows is the record of my retreat. Five days, five principles, and a reminder that sometimes stepping away from the noise is the best way to sharpen your craft.
+Smaller surface area.
+Easier tests.
+Cheaper changes.
+Clear ownership of behaviour.
 
-### Day 1: Single Responsibility Principle (SRP)
-
-The Single Responsibility Principle says a class should have one reason to change.
-
-That sounds simple, but it’s the difference between code you can live with and code that drives you mad.
-
-Imagine this:
+### Anti example
 
 ```python
+import json
+from pathlib import Path
+from datetime import datetime
+
 class ReportManager:
-    def __init__(self, content):
-        self.content = content
+    def __init__(self, path: Path):
+        self.path = path
+        self.items = []
 
-    def generate(self):
-        return f"Report: {self.content}"
+    def add_item(self, item: dict):
+        self.items.append(item)
 
-    def save(self, filename):
-        with open(filename, "w") as f:
-            f.write(self.generate())
+    def total(self) -> float:
+        return sum(x["amount"] for x in self.items)
 
-    def email(self, to):
-        print(f"Sending report to {to}")
+    def to_markdown(self) -> str:
+        lines = ["# Report", f"Generated: {datetime.utcnow().isoformat()}"]
+        for x in self.items:
+            lines.append(f"- {x['name']}: ${x['amount']:.2f}")
+        lines.append(f"Total: ${self.total():.2f}")
+        return "\n".join(lines)
+
+    def save(self):
+        # mixes formatting, IO, and domain
+        md = self.to_markdown()
+        self.path.write_text(md, encoding="utf-8")
+
+    def export_json(self):
+        data = {"items": self.items, "total": self.total()}
+        self.path.with_suffix(".json").write_text(
+            json.dumps(data, indent=2), encoding="utf-8"
+        )
 ```
 
-Looks pretty conventional, but this class has three reasons to change:
+Here, one class changes if:
 
-* Report formatting changes.
-* File saving logic changes.
-* Email delivery changes.
+* Domain rules change
+* Report layout changes
+* File storage changes
 
-That’s three headaches waiting for you.
+Three reasons. Too many.
 
-A better way:
+### SRP refactor
+
+Split by reason to change.
+
+* Domain: the data and rules.
+* Presentation: how it looks.
+* Persistence: where it goes.
 
 ```python
+from dataclasses import dataclass
+from typing import Iterable, Protocol
+from pathlib import Path
+import json
+from datetime import datetime
+
+# Domain
+
+@dataclass(frozen=True)
+class LineItem:
+    name: str
+    amount: float
+
+@dataclass
 class Report:
-    def __init__(self, content):
-        self.content = content
+    items: list[LineItem]
 
-    def generate(self):
-        return f"Report: {self.content}"
+    def total(self) -> float:
+        return sum(x.amount for x in self.items)
 
-class FileSaver:
-    def save(self, report, filename):
-        with open(filename, "w") as f:
-            f.write(report.generate())
 
-class EmailSender:
-    def send(self, report, to):
-        print(f"Sending {report.generate()} to {to}")
+# Presentation
+
+class Formatter(Protocol):
+    def format(self, report: Report) -> str: ...
+
+class MarkdownFormatter:
+    def format(self, report: Report) -> str:
+        parts = [
+            "# Report",
+            f"Generated: {datetime.utcnow().isoformat()}",
+            *[f"- {x.name}: ${x.amount:.2f}" for x in report.items],
+            f"Total: ${report.total():.2f}",
+        ]
+        return "\n".join(parts)
+
+class JsonFormatter:
+    def format(self, report: Report) -> str:
+        payload = {
+            "items": [{"name": x.name, "amount": x.amount} for x in report.items],
+            "total": report.total(),
+        }
+        return json.dumps(payload, indent=2)
+
+
+# Persistence
+
+class Writer(Protocol):
+    def write(self, content: str) -> None: ...
+
+class FileWriter:
+    def __init__(self, path: Path):
+        self.path = path
+
+    def write(self, content: str) -> None:
+        self.path.write_text(content, encoding="utf-8")
+
+
+# Application orchestration
+
+def render_and_write(report: Report, formatter: Formatter, writer: Writer) -> None:
+    writer.write(formatter.format(report))
+
+Usage
+
+report = Report(items=[LineItem("Widget", 12.5), LineItem("Gadget", 7.5)])
+
+# Markdown to file
+render_and_write(
+    report,
+    MarkdownFormatter(),
+    FileWriter(Path("report.md")),
+)
+
+# JSON to file
+render_and_write(
+    report,
+    JsonFormatter(),
+    FileWriter(Path("report.json")),
+)
 ```
 
-Now, each class has one job. One reason to change.
+Now:
 
-Let's recap:
+* Change domain rules → touch only Report.
+* Change layout → touch only formatter.
+* Change storage → touch only writer.
 
-* If a class is responsible for formatting a report, then the only reason to change it should be when the formatting rules change.
-* If a class is responsible for saving files, the only reason to change it should be when the file storage logic changes.
-* If a class is responsible for sending emails, the only reason to change it should be when the email delivery method changes.
+### Testing in isolation
 
-The mistake comes when one class handles all of these. Then it has multiple reasons to change (formatting rules, file I/O requirements, email transport changes). That violates SRP.
+```python
+class StubWriter:
+    def __init__(self):
+        self.payload = None
+    def write(self, content: str) -> None:
+        self.payload = content
+
+def test_markdown_formatting():
+    r = Report([LineItem("Item", 10)])
+    w = StubWriter()
+    render_and_write(r, MarkdownFormatter(), w)
+    assert "Total: $10.00" in w.payload
+
+def test_total_only_domain():
+    r = Report([LineItem("A", 1.0), LineItem("B", 2.5)])
+    assert r.total() == 3.5
+```
+
+No filesystem in tests. No datetime stubbing outside the formatter if you choose to inject a clock later.
+
+### Heuristics
+
+You might be breaking SRP if:
+
+1. Method names refer to different concerns. Example format, save, validate inside one class.
+2. More than one stakeholder asks for changes in the same class. Example design asks for layout changes, ops asks for path changes.
+3. Hard to name the class without using the word and.
+
+When to stop splitting
+
+* Do not chase perfection. Split by real reasons to change.
+* If two concerns always change together, keep them together.
+* SRP is a guide to reduce blast radius, not a rule to inflate class counts.
+
+### Closing
+
+One class. One reason to change.
+Keep domain pure.

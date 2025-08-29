@@ -1,12 +1,6 @@
-# Site settings
 title: Ari Victor
 tag_text: Ari
 description: Ari Victor's personal blog
-# baseurl: "/blog" # the subpath of your site, e.g. /blog
-# url: "https://example.com" # the base hostname & protocol for your site, e.g. http://example.com
-
-plugins:
-  - jekyll-seo-tag
 
 # Build settings
 markdown: kramdown
