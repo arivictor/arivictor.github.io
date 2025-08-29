@@ -2,13 +2,14 @@
 layout: default
 ---
 
+
 <div class="space-y-16">
   <header class="text-center py-16">
-    <h1 class="font-serif text-brand mb-6 leading-tight" style="font-size: 3rem;">
+    <!-- <h1 class="font-serif text-brand mb-6 leading-tight" style="font-size: 3rem;">
       Recent Posts
-    </h1>
+    </h1> -->
     <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-      Thoughts, experiences, and reflections from my journey.
+      This is where I sit with code, until it makes sense.
     </p>
   </header>
 
