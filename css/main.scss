@@ -1,99 +1,81 @@
 ---
-# Neo-Brutalist Theme Main CSS
+# Clean Minimal Theme Main CSS
 ---
 @charset "utf-8";
 
-// Neo-Brutalist Theme Variables
-$font-serif: 'Arial Black', Arial, sans-serif;
-$font-sans: 'Arial Black', Arial, sans-serif;
-$brand-color: #000000;
-$text-primary: #000000;
-$text-secondary: #000000;
-$text-light: #333333;
-$border-color: #000000;
-$background-light: #ffff00;
-$accent-blue: #00ffff;
-$accent-pink: #ff00ff;
-$accent-yellow: #ffff00;
-$accent-green: #00ff00;
-$brutalist-border: 4px solid #000000;
-$brutalist-shadow: 4px 4px 0px;
+// Minimal Theme Variables
+$font-serif: Georgia, 'Times New Roman', serif;
+$font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+$brand-color: #1a1a1a;
+$text-primary: #2d2d2d;
+$text-secondary: #6b7280;
+$text-light: #9ca3af;
+$border-color: #e5e7eb;
+$background-light: #f9fafb;
+$accent-color: #000000;
 
 // Import normalize for cross-browser consistency
 @import 'normalize';
 
-// Neo-Brutalist Base Styles
+// Minimal Base Styles
 * {
   box-sizing: border-box;
 }
 
 html {
-  font: 18px/1.4 #{$font-sans};
-  -webkit-font-smoothing: auto;
-  -moz-osx-font-smoothing: auto;
+  font: 16px/1.6 #{$font-sans};
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   margin: 0;
   background: white;
   color: #{$text-primary};
-  line-height: 1.4;
-  font-weight: 900;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 // Typography
 h1, h2, h3, h4, h5, h6 {
   font-family: #{$font-sans};
   color: #{$brand-color};
-  font-weight: 900;
-  line-height: 1.1;
+  font-weight: 600;
+  line-height: 1.3;
   margin: 0 0 1rem 0;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
-h1 { font-size: 4rem; }
-h2 { font-size: 3rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1.1rem; }
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
 
 p {
   margin: 0 0 1.5rem 0;
-  line-height: 1.4;
-  font-weight: 700;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 a {
   color: #{$brand-color};
   text-decoration: none;
-  background: #{$accent-yellow};
-  padding: 0.2em 0.4em;
-  border: 3px solid #{$brand-color};
-  display: inline-block;
-  font-weight: 900;
-  text-transform: uppercase;
-  box-shadow: #{$brutalist-shadow} #{$brand-color};
-  transition: all 0.1s ease;
+  font-weight: 500;
+  transition: color 0.2s ease;
   
   &:hover {
-    background: #{$accent-pink};
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px #{$brand-color};
+    color: #{$text-secondary};
   }
 }
 
-// Utility Classes (Brutalist-inspired)
+// Utility Classes (Minimal Design)
 .container {
   max-width: 64rem;
   margin: 0 auto;
   padding: 0 1.5rem;
-  border: #{$brutalist-border};
   background: white;
-  box-shadow: #{$brutalist-shadow} #{$brand-color};
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 .text-center { text-align: center; }
@@ -150,120 +132,82 @@ a {
 
 .prose-lg { font-size: 1.125rem; line-height: 1.7; }
 
-// Neo-Brutalist specific components
-.neo-nav {
+// Minimal components
+.minimal-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #{$accent-blue};
-  padding: 1rem;
-  border: #{$brutalist-border};
-  box-shadow: #{$brutalist-shadow} #{$brand-color};
-  margin: -1.5rem -1.5rem 2rem -1.5rem;
+  padding: 1rem 0;
   
   h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0;
-    background: #{$accent-yellow};
-    padding: 0.5rem 1rem;
-    border: 3px solid #{$brand-color};
-    box-shadow: 3px 3px 0px #{$brand-color};
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
+    font-weight: 600;
     
     a {
-      background: none;
-      border: none;
-      box-shadow: none;
-      padding: 0;
+      color: #{$brand-color};
       
       &:hover {
-        background: none;
-        transform: none;
-        box-shadow: none;
+        color: #{$text-secondary};
       }
     }
   }
   
   .nav-links {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     
     a {
       font-size: 0.875rem;
-      font-weight: 900;
-      color: #{$brand-color};
-      background: #{$accent-pink};
-      padding: 0.5rem 1rem;
-      border: 3px solid #{$brand-color};
-      box-shadow: 2px 2px 0px #{$brand-color};
-      text-transform: uppercase;
+      font-weight: 500;
+      color: #{$text-secondary};
       
       &:hover {
-        background: #{$accent-green};
-        transform: translate(1px, 1px);
-        box-shadow: 1px 1px 0px #{$brand-color};
+        color: #{$brand-color};
       }
     }
   }
 }
 
-.neo-article {
+.minimal-article {
   background: white;
-  border: #{$brutalist-border};
-  box-shadow: #{$brutalist-shadow} #{$brand-color};
-  padding: 2rem;
-  margin-bottom: 2rem;
+  padding: 0;
+  margin-bottom: 3rem;
   
   .article-title {
-    font-size: 3rem;
-    line-height: 1.1;
+    font-size: 2.25rem;
+    line-height: 1.2;
     margin-bottom: 1rem;
-    text-transform: uppercase;
-    font-weight: 900;
-    background: #{$accent-yellow};
-    border: 3px solid #{$brand-color};
-    padding: 1rem;
-    box-shadow: 3px 3px 0px #{$brand-color};
+    font-weight: 600;
+    color: #{$brand-color};
   }
   
   .article-meta {
-    font-size: 1rem;
-    color: #{$brand-color};
+    font-size: 0.875rem;
+    color: #{$text-secondary};
     margin-bottom: 2rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    background: #{$accent-blue};
-    border: 3px solid #{$brand-color};
-    padding: 1rem;
-    box-shadow: 2px 2px 0px #{$brand-color};
-    display: inline-block;
+    font-weight: 400;
   }
   
   .article-content {
-    background: #{$background-light};
-    border: 3px solid #{$brand-color};
-    padding: 2rem;
-    box-shadow: 3px 3px 0px #{$brand-color};
+    line-height: 1.6;
     
     h1, h2, h3, h4 { 
       margin-top: 2rem; 
       margin-bottom: 1rem;
-      background: #{$accent-pink};
-      border: 2px solid #{$brand-color};
-      padding: 1rem;
-      box-shadow: 2px 2px 0px #{$brand-color};
+      color: #{$brand-color};
+      font-weight: 600;
     }
     
     p { 
       margin-bottom: 1.5rem;
-      font-weight: 700;
+      color: #{$text-primary};
     }
     
     ul, ol {
       margin: 1.5rem 0;
       padding-left: 2rem;
-      font-weight: 700;
+      color: #{$text-primary};
       
       li {
         margin-bottom: 0.5rem;
@@ -271,57 +215,51 @@ a {
     }
     
     blockquote {
-      border: 3px solid #{$brand-color};
-      background: #{$accent-green};
+      border-left: 4px solid #{$border-color};
+      background: #{$background-light};
       padding: 1.5rem;
-      color: #{$brand-color};
-      font-style: normal;
-      font-weight: 900;
+      color: #{$text-secondary};
+      font-style: italic;
       margin: 2rem 0;
-      text-transform: uppercase;
-      box-shadow: 3px 3px 0px #{$brand-color};
     }
     
     code {
-      background: #{$accent-pink};
-      border: 2px solid #{$brand-color};
+      background: #{$background-light};
+      border: 1px solid #{$border-color};
       padding: 0.2rem 0.4rem;
       font-size: 0.875rem;
       color: #{$brand-color};
-      font-weight: 900;
+      border-radius: 0.25rem;
     }
     
     pre {
-      background: #{$brand-color};
-      color: #{$accent-yellow};
+      background: #{$background-light};
+      color: #{$text-primary};
       padding: 1.5rem;
       overflow-x: auto;
-      border: 3px solid #{$brand-color};
+      border: 1px solid #{$border-color};
       margin: 2rem 0;
-      box-shadow: 3px 3px 0px #{$accent-pink};
+      border-radius: 0.5rem;
       
       code {
         background: none;
         border: none;
         padding: 0;
-        color: #{$accent-yellow};
+        color: inherit;
       }
     }
   }
   
   .article-tags {
     margin-top: 2rem;
-    background: #{$accent-blue};
-    border: 3px solid #{$brand-color};
-    padding: 1.5rem;
-    box-shadow: 3px 3px 0px #{$brand-color};
+    padding-top: 2rem;
+    border-top: 1px solid #{$border-color};
     
     .tag-label {
-      font-size: 1rem;
-      color: #{$brand-color};
+      font-size: 0.875rem;
+      color: #{$text-secondary};
       margin-bottom: 1rem;
-      font-weight: 900;
-      text-transform: uppercase;
+      font-weight: 500;
     }
     
     .tag-list {
@@ -331,87 +269,59 @@ a {
       
       a {
         font-size: 0.875rem;
-        font-weight: 900;
-        background: #{$accent-green};
-        border: 2px solid #{$brand-color};
+        font-weight: 400;
+        background: #{$background-light};
+        border: 1px solid #{$border-color};
         padding: 0.5rem 1rem;
-        text-transform: uppercase;
-        box-shadow: 2px 2px 0px #{$brand-color};
+        border-radius: 1rem;
+        color: #{$text-secondary};
         
         &:hover {
-          background: #{$accent-yellow};
-          transform: translate(1px, 1px);
-          box-shadow: 1px 1px 0px #{$brand-color};
+          background: #{$border-color};
+          color: #{$brand-color};
         }
       }
     }
   }
 }
 
-.neo-post-list {
+.minimal-post-list {
   .post-item {
-    border: #{$brutalist-border};
-    background: #{$accent-yellow};
-    box-shadow: #{$brutalist-shadow} #{$brand-color};
-    padding: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid #{$border-color};
     margin-bottom: 2rem;
     
-    &:nth-child(even) {
-      background: #{$accent-blue};
-    }
-    
-    &:nth-child(3n) {
-      background: #{$accent-pink};
-    }
-    
     &:last-child {
+      border-bottom: none;
       margin-bottom: 0;
     }
     
     .post-title {
-      font-size: 2rem;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      font-weight: 900;
+      font-size: 1.5rem;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
       
       a {
-        background: white;
-        border: 3px solid #{$brand-color};
-        box-shadow: 3px 3px 0px #{$brand-color};
-        padding: 0.5rem;
-        display: block;
+        color: #{$brand-color};
         
         &:hover {
-          background: #{$accent-green};
-          transform: translate(2px, 2px);
-          box-shadow: 1px 1px 0px #{$brand-color};
+          color: #{$text-secondary};
         }
       }
     }
     
     .post-date {
-      font-size: 1rem;
-      color: #{$brand-color};
+      font-size: 0.875rem;
+      color: #{$text-secondary};
       margin-bottom: 1rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      background: white;
-      border: 2px solid #{$brand-color};
-      padding: 0.5rem;
-      display: inline-block;
-      box-shadow: 2px 2px 0px #{$brand-color};
+      font-weight: 400;
     }
     
     .post-description {
       color: #{$text-primary};
-      line-height: 1.4;
+      line-height: 1.6;
       margin-bottom: 1rem;
-      font-weight: 700;
-      background: white;
-      border: 2px solid #{$brand-color};
-      padding: 1rem;
-      box-shadow: 2px 2px 0px #{$brand-color};
     }
     
     .post-tags {
@@ -420,109 +330,71 @@ a {
       gap: 0.5rem;
       
       a {
-        font-size: 0.875rem;
-        color: #{$brand-color};
-        background: #{$accent-green};
-        border: 2px solid #{$brand-color};
-        padding: 0.25rem 0.5rem;
-        font-weight: 900;
-        text-transform: uppercase;
-        box-shadow: 1px 1px 0px #{$brand-color};
+        font-size: 0.75rem;
+        color: #{$text-secondary};
+        background: #{$background-light};
+        border: 1px solid #{$border-color};
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
         
         &:hover {
-          background: white;
-          transform: translate(1px, 1px);
-          box-shadow: 0px 0px 0px #{$brand-color};
+          background: #{$border-color};
+          color: #{$brand-color};
         }
       }
     }
   }
 }
 
-.neo-footer {
-  margin-top: 2rem;
+.minimal-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #{$border-color};
   
   .footer-content {
     max-width: 56rem;
     margin: 0 auto;
-    padding: 2rem;
-    background: #{$accent-pink};
-    border: #{$brutalist-border};
-    box-shadow: #{$brutalist-shadow} #{$brand-color};
+    padding: 2rem 0;
     text-align: center;
-    margin-top: 2rem;
     
     p {
-      font-size: 1rem;
-      color: #{$brand-color};
+      font-size: 0.875rem;
+      color: #{$text-secondary};
       margin: 0;
-      font-weight: 900;
-      text-transform: uppercase;
-      background: white;
-      border: 2px solid #{$brand-color};
-      padding: 1rem;
-      box-shadow: 2px 2px 0px #{$brand-color};
-      display: inline-block;
     }
   }
 }
 
 // Tag Pages Styles
-.neo-tag-card {
-  border: #{$brutalist-border};
-  background: #{$accent-yellow};
+.minimal-tag-card {
+  border: 1px solid #{$border-color};
+  background: white;
   padding: 1.5rem;
-  box-shadow: #{$brutalist-shadow} #{$brand-color};
-  transition: all 0.1s ease;
+  border-radius: 0.5rem;
+  transition: box-shadow 0.2s ease;
   
   &:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px #{$brand-color};
-  }
-  
-  &:nth-child(even) {
-    background: #{$accent-blue};
-  }
-  
-  &:nth-child(3n) {
-    background: #{$accent-pink};
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
   
   .tag-card-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    font-weight: 900;
-    background: white;
-    border: 2px solid #{$brand-color};
-    padding: 0.5rem;
-    box-shadow: 2px 2px 0px #{$brand-color};
+    font-weight: 600;
     
     a {
-      background: none;
-      border: none;
-      box-shadow: none;
-      padding: 0;
+      color: #{$brand-color};
       
       &:hover {
-        background: none;
-        transform: none;
-        box-shadow: none;
+        color: #{$text-secondary};
       }
     }
   }
   
   .tag-card-count {
-    font-size: 1rem;
-    color: #{$brand-color};
+    font-size: 0.875rem;
+    color: #{$text-secondary};
     margin-bottom: 1rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    background: #{$accent-green};
-    border: 2px solid #{$brand-color};
-    padding: 0.5rem;
-    box-shadow: 1px 1px 0px #{$brand-color};
-    display: inline-block;
   }
   
   .tag-card-posts {
@@ -532,42 +404,41 @@ a {
       align-items: baseline;
       margin-bottom: 0.5rem;
       font-size: 0.875rem;
-      background: white;
-      border: 2px solid #{$brand-color};
-      padding: 0.5rem;
-      box-shadow: 1px 1px 0px #{$brand-color};
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #{$background-light};
+      
+      &:last-child {
+        border-bottom: none;
+      }
       
       a {
-        color: #{$brand-color};
+        color: #{$text-primary};
         flex: 1;
         margin-right: 1rem;
-        font-weight: 900;
-        background: none;
-        border: none;
-        box-shadow: none;
-        padding: 0;
-        text-transform: uppercase;
         
         &:hover {
-          background: #{$accent-yellow};
-          padding: 0.2rem;
-          border: 1px solid #{$brand-color};
-          box-shadow: 1px 1px 0px #{$brand-color};
+          color: #{$brand-color};
         }
       }
       
       .tag-card-date {
-        color: #{$brand-color};
+        color: #{$text-light};
         font-size: 0.75rem;
         white-space: nowrap;
-        font-weight: 900;
-        text-transform: uppercase;
       }
     }
     
     .tag-card-more {
       margin-top: 0.75rem;
       font-size: 0.875rem;
+      
+      a {
+        color: #{$text-secondary};
+        
+        &:hover {
+          color: #{$brand-color};
+        }
+      }
     }
   }
 }
@@ -627,27 +498,16 @@ a {
   border-radius: 0.25rem;
 }
 
-// Additional brutalist styles for intro and layout
-.space-y-16 > * + * { margin-top: 2rem; }
-
+// Header layout
 header {
-  background: #{$accent-green};
-  border: #{$brutalist-border};
-  box-shadow: #{$brutalist-shadow} #{$brand-color};
-  padding: 2rem;
-  margin: -1.5rem -1.5rem 2rem -1.5rem;
+  padding: 2rem 0;
   
   p {
-    background: white;
-    border: 3px solid #{$brand-color};
-    padding: 1.5rem;
-    box-shadow: 3px 3px 0px #{$brand-color};
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    max-width: none;
+    color: #{$text-secondary};
+    font-size: 1.125rem;
+    line-height: 1.6;
+    max-width: 42rem;
     margin: 0 auto;
-    display: inline-block;
   }
 }
 

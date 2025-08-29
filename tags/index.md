@@ -6,7 +6,7 @@ title: Tags
 
 <div class="space-y-16">
   <header class="text-center py-16">
-    <h1 class="font-serif text-brand mb-6 leading-tight" style="font-size: 3rem;">
+    <h1 class="font-sans text-brand mb-6 leading-tight" style="font-size: 2.25rem;">
       Tags
     </h1>
     <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -21,10 +21,10 @@ title: Tags
         {% for tag in sorted_tags %}
           {% assign tag_name = tag[0] %}
           {% assign tag_posts = tag[1] %}
-          <div class="neo-tag-card">
+          <div class="minimal-tag-card">
             <h2 class="tag-card-title">
               <a href="{{ '/tags/' | append: tag_name | append: '/' | relative_url }}" 
-                 class="font-serif text-brand transition-colors">
+                 class="font-sans text-brand transition-colors">
                 {{ tag_name }}
               </a>
             </h2>
