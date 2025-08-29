@@ -1,10 +1,10 @@
 PYTHON=python3
 
 new-post:
-	@$(PYTHON) new.py "$(TITLE)"
+	@$(PYTHON) tools/create_post.py "$(TITLE)"
 
 generate-tags:
-	@$(PYTHON) generate_tags.py
+	@$(PYTHON) tools/generate_tags.py
 
 build: generate-tags
 	bundle exec jekyll build
