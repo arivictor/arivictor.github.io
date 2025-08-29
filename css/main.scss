@@ -1,9 +1,307 @@
 ---
-# Main scss file
+# Neo-Modern Theme Main CSS
 ---
 @charset "utf-8";
 
-@import
-  'normalize',
-  'biscuit',
-  'syntax';
+// Neo-Modern Theme Variables
+$font-serif: Georgia, Cambria, 'Times New Roman', serif;
+$font-sans: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+$brand-color: #4a5568;
+$text-primary: #374151;
+$text-secondary: #6b7280;
+$text-light: #9ca3af;
+$border-color: #e5e7eb;
+$background-light: #f9fafb;
+
+// Import normalize for cross-browser consistency
+@import 'normalize';
+
+// Neo-Modern Base Styles
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 16px/1.6 #{$font-sans};
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: white;
+  color: #{$text-primary};
+  line-height: 1.7;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: #{$font-serif};
+  color: #{$brand-color};
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+p {
+  margin: 0 0 1.5rem 0;
+  line-height: 1.7;
+}
+
+a {
+  color: #{$brand-color};
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: #{$text-primary};
+  }
+}
+
+// Utility Classes (Tailwind-inspired)
+.container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.text-center { text-align: center; }
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }
+
+.font-serif { font-family: #{$font-serif}; }
+.font-sans { font-family: #{$font-sans}; }
+.font-medium { font-weight: 500; }
+
+.text-brand { color: #{$brand-color}; }
+.text-gray-500 { color: #{$text-light}; }
+.text-gray-600 { color: #{$text-secondary}; }
+.text-gray-700 { color: #{$text-primary}; }
+
+.border-b { border-bottom: 1px solid #{$border-color}; }
+.border-t { border-top: 1px solid #{$border-color}; }
+
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mb-12 { margin-bottom: 3rem; }
+.mb-16 { margin-bottom: 4rem; }
+.mt-16 { margin-top: 4rem; }
+.mt-24 { margin-top: 6rem; }
+
+.pb-8 { padding-bottom: 2rem; }
+.pt-8 { padding-top: 2rem; }
+.py-16 { padding: 4rem 0; }
+
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-12 > * + * { margin-top: 3rem; }
+.space-y-16 > * + * { margin-top: 4rem; }
+.space-x-8 > * + * { margin-left: 2rem; }
+
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+
+.gap-3 > * + * { margin-left: 0.75rem; }
+.gap-4 > * + * { margin-left: 1rem; }
+
+.leading-tight { line-height: 1.25; }
+.leading-relaxed { line-height: 1.625; }
+
+.no-underline { text-decoration: none; }
+.transition-colors { transition: color 0.2s ease; }
+
+.max-w-2xl { max-width: 42rem; }
+.max-w-4xl { max-width: 56rem; }
+.max-w-none { max-width: none; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.prose-lg { font-size: 1.125rem; line-height: 1.7; }
+
+// Neo-Modern specific components
+.neo-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    
+    a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #{$text-secondary};
+      
+      &:hover {
+        color: #{$brand-color};
+      }
+    }
+  }
+}
+
+.neo-article {
+  .article-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .article-meta {
+    font-size: 0.875rem;
+    color: #{$text-light};
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #{$border-color};
+  }
+  
+  .article-content {
+    h1, h2, h3, h4 { 
+      margin-top: 3rem; 
+      margin-bottom: 1.5rem; 
+    }
+    
+    p { margin-bottom: 1.5rem; }
+    
+    ul, ol {
+      margin: 1.5rem 0;
+      padding-left: 1.5rem;
+    }
+    
+    blockquote {
+      border-left: 2px solid #{$border-color};
+      padding-left: 1.5rem;
+      color: #{$text-secondary};
+      font-style: italic;
+      margin: 2rem 0;
+    }
+    
+    code {
+      background: #{$background-light};
+      padding: 0.2rem 0.4rem;
+      font-size: 0.875rem;
+      color: #{$text-primary};
+    }
+    
+    pre {
+      background: #{$background-light};
+      padding: 1.5rem;
+      overflow-x: auto;
+      border: 1px solid #{$border-color};
+      margin: 2rem 0;
+      
+      code {
+        background: none;
+        padding: 0;
+      }
+    }
+  }
+  
+  .article-tags {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #{$border-color};
+    
+    .tag-label {
+      font-size: 0.875rem;
+      color: #{$text-light};
+      margin-bottom: 1rem;
+    }
+    
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      
+      a {
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.neo-post-list {
+  .post-item {
+    border-bottom: 1px solid #{$border-color};
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+    
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    
+    .post-title {
+      font-size: 1.5rem;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      
+      a:hover {
+        color: #{$text-primary};
+      }
+    }
+    
+    .post-date {
+      font-size: 0.875rem;
+      color: #{$text-light};
+      margin-bottom: 1rem;
+    }
+    
+    .post-description {
+      color: #{$text-primary};
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      
+      a {
+        font-size: 0.875rem;
+        color: #{$text-light};
+        
+        &:hover {
+          color: #{$brand-color};
+        }
+      }
+    }
+  }
+}
+
+.neo-footer {
+  margin-top: 6rem;
+  padding: 4rem 1.5rem;
+  
+  .footer-content {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid #{$border-color};
+    text-align: center;
+    
+    p {
+      font-size: 0.875rem;
+      color: #{$text-light};
+      margin: 0;
+    }
+  }
+}
+
+// Import syntax highlighting
+@import 'syntax';

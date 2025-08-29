@@ -8,28 +8,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ site.title }}</title>
 
-  <!-- Tailwind (via CDN for simplicity) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
   {% include head.html %}
 </head>
 
-<body class="bg-white text-black font-sans leading-normal">
-
-  <!-- Navbar -->
-  <main class="container">
-    <div class="mt-10 mb-15">
+<body>
+  <!-- Header with minimal navigation -->
+  <header class="container py-16">
+    <div class="border-b pb-8 mb-16">
       {% include nav.html %}
     </div>
+  </header>
 
-  <!-- Main content -->
-   <div class="mt-20">
-     {{ content }}
-   </div>
+  <!-- Main content with generous whitespace -->
+  <main class="container">
+    {{ content }}
   </main>
 
   <!-- Footer -->
-  
   {% include footer.html %}
   {% include scripts.html %}
 </body>
