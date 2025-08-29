@@ -1,75 +1,99 @@
 ---
-# Neo-Modern Theme Main CSS
+# Neo-Brutalist Theme Main CSS
 ---
 @charset "utf-8";
 
-// Neo-Modern Theme Variables
-$font-serif: Georgia, Cambria, 'Times New Roman', serif;
-$font-sans: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-$brand-color: #4a5568;
-$text-primary: #374151;
-$text-secondary: #6b7280;
-$text-light: #9ca3af;
-$border-color: #e5e7eb;
-$background-light: #f9fafb;
+// Neo-Brutalist Theme Variables
+$font-serif: 'Arial Black', Arial, sans-serif;
+$font-sans: 'Arial Black', Arial, sans-serif;
+$brand-color: #000000;
+$text-primary: #000000;
+$text-secondary: #000000;
+$text-light: #333333;
+$border-color: #000000;
+$background-light: #ffff00;
+$accent-blue: #00ffff;
+$accent-pink: #ff00ff;
+$accent-yellow: #ffff00;
+$accent-green: #00ff00;
+$brutalist-border: 4px solid #000000;
+$brutalist-shadow: 4px 4px 0px;
 
 // Import normalize for cross-browser consistency
 @import 'normalize';
 
-// Neo-Modern Base Styles
+// Neo-Brutalist Base Styles
 * {
   box-sizing: border-box;
 }
 
 html {
-  font: 16px/1.6 #{$font-sans};
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font: 18px/1.4 #{$font-sans};
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
 }
 
 body {
   margin: 0;
   background: white;
   color: #{$text-primary};
-  line-height: 1.7;
+  line-height: 1.4;
+  font-weight: 900;
 }
 
 // Typography
 h1, h2, h3, h4, h5, h6 {
-  font-family: #{$font-serif};
+  font-family: #{$font-sans};
   color: #{$brand-color};
-  font-weight: 500;
-  line-height: 1.3;
+  font-weight: 900;
+  line-height: 1.1;
   margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.125rem; }
-h6 { font-size: 1rem; }
+h1 { font-size: 4rem; }
+h2 { font-size: 3rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1.1rem; }
 
 p {
   margin: 0 0 1.5rem 0;
-  line-height: 1.7;
+  line-height: 1.4;
+  font-weight: 700;
 }
 
 a {
   color: #{$brand-color};
   text-decoration: none;
-  transition: color 0.2s ease;
+  background: #{$accent-yellow};
+  padding: 0.2em 0.4em;
+  border: 3px solid #{$brand-color};
+  display: inline-block;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: #{$brutalist-shadow} #{$brand-color};
+  transition: all 0.1s ease;
   
   &:hover {
-    color: #{$text-primary};
+    background: #{$accent-pink};
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #{$brand-color};
   }
 }
 
-// Utility Classes (Tailwind-inspired)
+// Utility Classes (Brutalist-inspired)
 .container {
   max-width: 64rem;
   margin: 0 auto;
   padding: 0 1.5rem;
+  border: #{$brutalist-border};
+  background: white;
+  box-shadow: #{$brutalist-shadow} #{$brand-color};
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .text-center { text-align: center; }
@@ -126,99 +150,178 @@ a {
 
 .prose-lg { font-size: 1.125rem; line-height: 1.7; }
 
-// Neo-Modern specific components
+// Neo-Brutalist specific components
 .neo-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #{$accent-blue};
+  padding: 1rem;
+  border: #{$brutalist-border};
+  box-shadow: #{$brutalist-shadow} #{$brand-color};
+  margin: -1.5rem -1.5rem 2rem -1.5rem;
   
   h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0;
+    background: #{$accent-yellow};
+    padding: 0.5rem 1rem;
+    border: 3px solid #{$brand-color};
+    box-shadow: 3px 3px 0px #{$brand-color};
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    
+    a {
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      
+      &:hover {
+        background: none;
+        transform: none;
+        box-shadow: none;
+      }
+    }
   }
   
   .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     
     a {
       font-size: 0.875rem;
-      font-weight: 500;
-      color: #{$text-secondary};
+      font-weight: 900;
+      color: #{$brand-color};
+      background: #{$accent-pink};
+      padding: 0.5rem 1rem;
+      border: 3px solid #{$brand-color};
+      box-shadow: 2px 2px 0px #{$brand-color};
+      text-transform: uppercase;
       
       &:hover {
-        color: #{$brand-color};
+        background: #{$accent-green};
+        transform: translate(1px, 1px);
+        box-shadow: 1px 1px 0px #{$brand-color};
       }
     }
   }
 }
 
 .neo-article {
+  background: white;
+  border: #{$brutalist-border};
+  box-shadow: #{$brutalist-shadow} #{$brand-color};
+  padding: 2rem;
+  margin-bottom: 2rem;
+  
   .article-title {
-    font-size: 2.5rem;
-    line-height: 1.2;
+    font-size: 3rem;
+    line-height: 1.1;
     margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    background: #{$accent-yellow};
+    border: 3px solid #{$brand-color};
+    padding: 1rem;
+    box-shadow: 3px 3px 0px #{$brand-color};
   }
   
   .article-meta {
-    font-size: 0.875rem;
-    color: #{$text-light};
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #{$border-color};
+    font-size: 1rem;
+    color: #{$brand-color};
+    margin-bottom: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: #{$accent-blue};
+    border: 3px solid #{$brand-color};
+    padding: 1rem;
+    box-shadow: 2px 2px 0px #{$brand-color};
+    display: inline-block;
   }
   
   .article-content {
+    background: #{$background-light};
+    border: 3px solid #{$brand-color};
+    padding: 2rem;
+    box-shadow: 3px 3px 0px #{$brand-color};
+    
     h1, h2, h3, h4 { 
-      margin-top: 3rem; 
-      margin-bottom: 1.5rem; 
+      margin-top: 2rem; 
+      margin-bottom: 1rem;
+      background: #{$accent-pink};
+      border: 2px solid #{$brand-color};
+      padding: 1rem;
+      box-shadow: 2px 2px 0px #{$brand-color};
     }
     
-    p { margin-bottom: 1.5rem; }
+    p { 
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
     
     ul, ol {
       margin: 1.5rem 0;
-      padding-left: 1.5rem;
+      padding-left: 2rem;
+      font-weight: 700;
+      
+      li {
+        margin-bottom: 0.5rem;
+      }
     }
     
     blockquote {
-      border-left: 2px solid #{$border-color};
-      padding-left: 1.5rem;
-      color: #{$text-secondary};
-      font-style: italic;
+      border: 3px solid #{$brand-color};
+      background: #{$accent-green};
+      padding: 1.5rem;
+      color: #{$brand-color};
+      font-style: normal;
+      font-weight: 900;
       margin: 2rem 0;
+      text-transform: uppercase;
+      box-shadow: 3px 3px 0px #{$brand-color};
     }
     
     code {
-      background: #{$background-light};
+      background: #{$accent-pink};
+      border: 2px solid #{$brand-color};
       padding: 0.2rem 0.4rem;
       font-size: 0.875rem;
-      color: #{$text-primary};
+      color: #{$brand-color};
+      font-weight: 900;
     }
     
     pre {
-      background: #{$background-light};
+      background: #{$brand-color};
+      color: #{$accent-yellow};
       padding: 1.5rem;
       overflow-x: auto;
-      border: 1px solid #{$border-color};
+      border: 3px solid #{$brand-color};
       margin: 2rem 0;
+      box-shadow: 3px 3px 0px #{$accent-pink};
       
       code {
         background: none;
+        border: none;
         padding: 0;
+        color: #{$accent-yellow};
       }
     }
   }
   
   .article-tags {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid #{$border-color};
+    margin-top: 2rem;
+    background: #{$accent-blue};
+    border: 3px solid #{$brand-color};
+    padding: 1.5rem;
+    box-shadow: 3px 3px 0px #{$brand-color};
     
     .tag-label {
-      font-size: 0.875rem;
-      color: #{$text-light};
+      font-size: 1rem;
+      color: #{$brand-color};
       margin-bottom: 1rem;
+      font-weight: 900;
+      text-transform: uppercase;
     }
     
     .tag-list {
@@ -228,7 +331,18 @@ a {
       
       a {
         font-size: 0.875rem;
-        font-weight: 500;
+        font-weight: 900;
+        background: #{$accent-green};
+        border: 2px solid #{$brand-color};
+        padding: 0.5rem 1rem;
+        text-transform: uppercase;
+        box-shadow: 2px 2px 0px #{$brand-color};
+        
+        &:hover {
+          background: #{$accent-yellow};
+          transform: translate(1px, 1px);
+          box-shadow: 1px 1px 0px #{$brand-color};
+        }
       }
     }
   }
@@ -236,48 +350,89 @@ a {
 
 .neo-post-list {
   .post-item {
-    border-bottom: 1px solid #{$border-color};
-    padding-bottom: 3rem;
-    margin-bottom: 3rem;
+    border: #{$brutalist-border};
+    background: #{$accent-yellow};
+    box-shadow: #{$brutalist-shadow} #{$brand-color};
+    padding: 2rem;
+    margin-bottom: 2rem;
+    
+    &:nth-child(even) {
+      background: #{$accent-blue};
+    }
+    
+    &:nth-child(3n) {
+      background: #{$accent-pink};
+    }
     
     &:last-child {
-      border-bottom: none;
       margin-bottom: 0;
     }
     
     .post-title {
-      font-size: 1.5rem;
-      line-height: 1.3;
+      font-size: 2rem;
+      line-height: 1.1;
       margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-weight: 900;
       
-      a:hover {
-        color: #{$text-primary};
+      a {
+        background: white;
+        border: 3px solid #{$brand-color};
+        box-shadow: 3px 3px 0px #{$brand-color};
+        padding: 0.5rem;
+        display: block;
+        
+        &:hover {
+          background: #{$accent-green};
+          transform: translate(2px, 2px);
+          box-shadow: 1px 1px 0px #{$brand-color};
+        }
       }
     }
     
     .post-date {
-      font-size: 0.875rem;
-      color: #{$text-light};
+      font-size: 1rem;
+      color: #{$brand-color};
       margin-bottom: 1rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      background: white;
+      border: 2px solid #{$brand-color};
+      padding: 0.5rem;
+      display: inline-block;
+      box-shadow: 2px 2px 0px #{$brand-color};
     }
     
     .post-description {
       color: #{$text-primary};
-      line-height: 1.6;
+      line-height: 1.4;
       margin-bottom: 1rem;
+      font-weight: 700;
+      background: white;
+      border: 2px solid #{$brand-color};
+      padding: 1rem;
+      box-shadow: 2px 2px 0px #{$brand-color};
     }
     
     .post-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.5rem;
       
       a {
         font-size: 0.875rem;
-        color: #{$text-light};
+        color: #{$brand-color};
+        background: #{$accent-green};
+        border: 2px solid #{$brand-color};
+        padding: 0.25rem 0.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        box-shadow: 1px 1px 0px #{$brand-color};
         
         &:hover {
-          color: #{$brand-color};
+          background: white;
+          transform: translate(1px, 1px);
+          box-shadow: 0px 0px 0px #{$brand-color};
         }
       }
     }
@@ -285,50 +440,89 @@ a {
 }
 
 .neo-footer {
-  margin-top: 6rem;
-  padding: 4rem 1.5rem;
+  margin-top: 2rem;
   
   .footer-content {
     max-width: 56rem;
     margin: 0 auto;
-    padding-top: 2rem;
-    border-top: 1px solid #{$border-color};
+    padding: 2rem;
+    background: #{$accent-pink};
+    border: #{$brutalist-border};
+    box-shadow: #{$brutalist-shadow} #{$brand-color};
     text-align: center;
+    margin-top: 2rem;
     
     p {
-      font-size: 0.875rem;
-      color: #{$text-light};
+      font-size: 1rem;
+      color: #{$brand-color};
       margin: 0;
+      font-weight: 900;
+      text-transform: uppercase;
+      background: white;
+      border: 2px solid #{$brand-color};
+      padding: 1rem;
+      box-shadow: 2px 2px 0px #{$brand-color};
+      display: inline-block;
     }
   }
 }
 
 // Tag Pages Styles
 .neo-tag-card {
-  border: 1px solid #{$border-color};
-  border-radius: 8px;
+  border: #{$brutalist-border};
+  background: #{$accent-yellow};
   padding: 1.5rem;
-  background: white;
-  transition: all 0.2s ease;
+  box-shadow: #{$brutalist-shadow} #{$brand-color};
+  transition: all 0.1s ease;
   
   &:hover {
-    border-color: #{$brand-color};
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #{$brand-color};
+  }
+  
+  &:nth-child(even) {
+    background: #{$accent-blue};
+  }
+  
+  &:nth-child(3n) {
+    background: #{$accent-pink};
   }
   
   .tag-card-title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    background: white;
+    border: 2px solid #{$brand-color};
+    padding: 0.5rem;
+    box-shadow: 2px 2px 0px #{$brand-color};
     
-    a:hover {
-      color: #{$text-primary};
+    a {
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      
+      &:hover {
+        background: none;
+        transform: none;
+        box-shadow: none;
+      }
     }
   }
   
   .tag-card-count {
-    font-size: 0.875rem;
-    color: #{$text-light};
+    font-size: 1rem;
+    color: #{$brand-color};
     margin-bottom: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: #{$accent-green};
+    border: 2px solid #{$brand-color};
+    padding: 0.5rem;
+    box-shadow: 1px 1px 0px #{$brand-color};
+    display: inline-block;
   }
   
   .tag-card-posts {
@@ -338,21 +532,36 @@ a {
       align-items: baseline;
       margin-bottom: 0.5rem;
       font-size: 0.875rem;
+      background: white;
+      border: 2px solid #{$brand-color};
+      padding: 0.5rem;
+      box-shadow: 1px 1px 0px #{$brand-color};
       
       a {
-        color: #{$text-secondary};
+        color: #{$brand-color};
         flex: 1;
         margin-right: 1rem;
+        font-weight: 900;
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        text-transform: uppercase;
         
         &:hover {
-          color: #{$brand-color};
+          background: #{$accent-yellow};
+          padding: 0.2rem;
+          border: 1px solid #{$brand-color};
+          box-shadow: 1px 1px 0px #{$brand-color};
         }
       }
       
       .tag-card-date {
-        color: #{$text-light};
+        color: #{$brand-color};
         font-size: 0.75rem;
         white-space: nowrap;
+        font-weight: 900;
+        text-transform: uppercase;
       }
     }
     
@@ -418,12 +627,28 @@ a {
   border-radius: 0.25rem;
 }
 
-.border {
-  border: 1px solid #{$border-color};
-}
+// Additional brutalist styles for intro and layout
+.space-y-16 > * + * { margin-top: 2rem; }
 
-.hover\:border-brand-color:hover {
-  border-color: #{$brand-color};
+header {
+  background: #{$accent-green};
+  border: #{$brutalist-border};
+  box-shadow: #{$brutalist-shadow} #{$brand-color};
+  padding: 2rem;
+  margin: -1.5rem -1.5rem 2rem -1.5rem;
+  
+  p {
+    background: white;
+    border: 3px solid #{$brand-color};
+    padding: 1.5rem;
+    box-shadow: 3px 3px 0px #{$brand-color};
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    max-width: none;
+    margin: 0 auto;
+    display: inline-block;
+  }
 }
 
 // Import syntax highlighting
