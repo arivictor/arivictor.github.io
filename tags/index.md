@@ -23,7 +23,7 @@ title: Tags
           {% assign tag_posts = tag[1] %}
           <div class="neo-tag-card">
             <h2 class="tag-card-title">
-              <a href="{{ '/tags/' | append: tag_name | relative_url }}" 
+              <a href="{{ '/tags/' | append: tag_name | append: '/' | relative_url }}" 
                  class="font-serif text-brand transition-colors">
                 {{ tag_name }}
               </a>
@@ -48,7 +48,7 @@ title: Tags
               
               {% if tag_posts.size > 3 %}
               <div class="tag-card-more">
-                <a href="{{ '/tags/' | append: tag_name | relative_url }}" 
+                <a href="{{ '/tags/' | append: tag_name | append: '/' | relative_url }}" 
                    class="text-brand transition-colors">
                   + {{ tag_posts.size | minus: 3 }} more
                 </a>

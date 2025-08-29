@@ -36,7 +36,7 @@ layout: default
         {% if post.tags %}
         <div class="post-tags">
           {% for tag in post.tags %}
-          <a href="{{ '/tags/' | append: tag | relative_url }}">{{ tag }}</a>
+          <a href="{{ '/tags/' | append: tag | append: '/' | relative_url }}">{{ tag }}</a>
           {% endfor %}
         </div>
         {% endif %}
@@ -59,7 +59,7 @@ layout: default
         {% assign tag_name = tag[0] %}
         {% assign tag_posts = tag[1] %}
         {% if tag_name != page.tag %}
-        <a href="{{ '/tags/' | append: tag_name | relative_url }}" 
+        <a href="{{ '/tags/' | append: tag_name | append: '/' | relative_url }}" 
            class="text-brand transition-colors font-medium px-3 py-1 rounded border border-gray-300 hover:border-brand-color">
           {{ tag_name }} ({{ tag_posts.size }})
         </a>
